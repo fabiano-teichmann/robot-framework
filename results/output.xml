@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200127 22:23:52.009" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200127 23:46:31.910" rpa="false">
 <suite id="s1" name="TestEcommerce" source="/home/fabiano/PycharmProjects/robotframework/tests/TestEcommerce.robot">
 <kw name="Abrir navegador" library="Resource" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>${URL}</arg>
+<arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200127 22:23:52.115" level="INFO">Opening browser 'firefox' to base url 'http://automationpractice.com'.</msg>
-<msg timestamp="20200127 22:23:52.116" level="INFO">Firefox driver log is always forced to to: /home/fabiano/PycharmProjects/robotframework/results/geckodriver-9.log</msg>
-<status status="PASS" starttime="20200127 22:23:52.115" endtime="20200127 22:24:00.302"></status>
+<msg timestamp="20200127 23:46:32.017" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20200127 23:46:32.017" level="INFO">Firefox driver log is always forced to to: /home/fabiano/PycharmProjects/robotframework/results/geckodriver-29.log</msg>
+<status status="PASS" starttime="20200127 23:46:32.016" endtime="20200127 23:46:34.540"></status>
 </kw>
-<status status="PASS" starttime="20200127 22:23:52.114" endtime="20200127 22:24:00.302"></status>
+<status status="PASS" starttime="20200127 23:46:32.016" endtime="20200127 23:46:34.540"></status>
 </kw>
 <test id="s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
 <kw name="Acessar página home do site" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200127 23:46:34.542" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200127 23:46:34.542" endtime="20200127 23:46:39.967"></status>
+</kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200127 22:24:00.313" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200127 22:24:00.304" endtime="20200127 22:24:00.313"></status>
+<msg timestamp="20200127 23:46:39.972" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200127 23:46:39.968" endtime="20200127 23:46:39.972"></status>
 </kw>
-<status status="PASS" starttime="20200127 22:24:00.304" endtime="20200127 22:24:00.313"></status>
+<status status="PASS" starttime="20200127 23:46:34.541" endtime="20200127 23:46:39.972"></status>
 </kw>
 <kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisar" library="Resource">
 <kw name="Input Text" library="SeleniumLibrary">
@@ -33,10 +41,10 @@
 <arg>id=search_query_top</arg>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200127 22:24:00.314" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200127 22:24:00.313" endtime="20200127 22:24:00.395"></status>
+<msg timestamp="20200127 23:46:39.973" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200127 23:46:39.973" endtime="20200127 23:46:40.044"></status>
 </kw>
-<status status="PASS" starttime="20200127 22:24:00.313" endtime="20200127 22:24:00.395"></status>
+<status status="PASS" starttime="20200127 23:46:39.973" endtime="20200127 23:46:40.044"></status>
 </kw>
 <kw name="Clicar no botão pesquisar" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -44,24 +52,131 @@
 <arguments>
 <arg>name=submit_search</arg>
 </arguments>
-<msg timestamp="20200127 22:24:00.396" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200127 22:24:00.396" endtime="20200127 22:24:02.009"></status>
+<msg timestamp="20200127 23:46:40.045" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200127 23:46:40.045" endtime="20200127 23:46:41.306"></status>
 </kw>
-<status status="PASS" starttime="20200127 22:24:00.395" endtime="20200127 22:24:02.009"></status>
+<status status="PASS" starttime="20200127 23:46:40.045" endtime="20200127 23:46:41.306"></status>
 </kw>
-<status status="PASS" starttime="20200127 22:24:00.302" endtime="20200127 22:24:02.009" critical="yes"></status>
+<kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>css=#center_column &gt; h1</arg>
+</arguments>
+<status status="PASS" starttime="20200127 23:46:41.307" endtime="20200127 23:46:41.357"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Search - My Store</arg>
+</arguments>
+<msg timestamp="20200127 23:46:41.360" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20200127 23:46:41.357" endtime="20200127 23:46:41.360"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]//*[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]</arg>
+</arguments>
+<msg timestamp="20200127 23:46:41.370" level="INFO">Current page contains image 'xpath=//*[@id="center_column"]//*[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]'.</msg>
+<status status="PASS" starttime="20200127 23:46:41.360" endtime="20200127 23:46:41.370"></status>
+</kw>
+<kw name="Page Should Contain Link" library="SeleniumLibrary">
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Blouse")]</arg>
+</arguments>
+<msg timestamp="20200127 23:46:41.378" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Blouse")]'.</msg>
+<status status="PASS" starttime="20200127 23:46:41.370" endtime="20200127 23:46:41.379"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:41.307" endtime="20200127 23:46:41.379"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:34.540" endtime="20200127 23:46:41.379" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200127 22:23:52.009" endtime="20200127 22:24:02.011"></status>
+<test id="s1-t2" name="Caso de Teste 02: Pesquisar produto não existente">
+<kw name="Acessar página home do site" library="Resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200127 23:46:41.381" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200127 23:46:41.381" endtime="20200127 23:46:43.470"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20200127 23:46:43.475" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200127 23:46:43.470" endtime="20200127 23:46:43.475"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:41.381" endtime="20200127 23:46:43.475"></status>
+</kw>
+<kw name="Digitar o nome do produto &quot;Produto não existe&quot; no campo de pesquisar" library="Resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=search_query_top</arg>
+<arg>${PRODUTO}</arg>
+</arguments>
+<msg timestamp="20200127 23:46:43.477" level="INFO">Typing text 'Produto não existe' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200127 23:46:43.476" endtime="20200127 23:46:43.556"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:43.476" endtime="20200127 23:46:43.557"></status>
+</kw>
+<kw name="Clicar no botão pesquisar" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>name=submit_search</arg>
+</arguments>
+<msg timestamp="20200127 23:46:43.557" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200127 23:46:43.557" endtime="20200127 23:46:44.567"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:43.557" endtime="20200127 23:46:44.567"></status>
+</kw>
+<kw name="Conferir mensagem de erro &quot;No results were found for your search &quot;Produto não existe&quot;&quot;" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
+</arguments>
+<status status="PASS" starttime="20200127 23:46:44.568" endtime="20200127 23:46:44.608"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
+<arg>${MENSAGEM_ALERTA}</arg>
+</arguments>
+<msg timestamp="20200127 23:46:44.608" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "Produto não existe"'.</msg>
+<status status="PASS" starttime="20200127 23:46:44.608" endtime="20200127 23:46:44.631"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/h1/span</arg>
+<arg>0 results have been found.</arg>
+</arguments>
+<msg timestamp="20200127 23:46:44.631" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/h1/span' contains exact text '0 results have been found.'.</msg>
+<status status="PASS" starttime="20200127 23:46:44.631" endtime="20200127 23:46:44.652"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:44.567" endtime="20200127 23:46:44.652"></status>
+</kw>
+<status status="PASS" starttime="20200127 23:46:41.380" endtime="20200127 23:46:44.652" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200127 23:46:31.911" endtime="20200127 23:46:44.653"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="TestEcommerce">TestEcommerce</stat>
+<stat pass="2" fail="0" id="s1" name="TestEcommerce">TestEcommerce</stat>
 </suite>
 </statistics>
 <errors>
