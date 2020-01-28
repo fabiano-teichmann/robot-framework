@@ -1,10 +1,9 @@
 *** Settings ***
 Resource  ../resource/Resource.robot
+Suite Setup     Abrir navegador
+Suite Setup     Fechar navegador
 
 
-*** Variables ***
-${URL}      http://automationpractice.com/
-${BROWSER}      chrome
 *** Test Cases ***
 Cenario 01: Pesquisar produto existente
 
