@@ -16,3 +16,10 @@ Fechar navegador
 Acessar página home do site
     Title Should be     My Store
 
+Digitar o nome do produto "${PRODUTO}" no campo de pesquisar
+    Input Text  id=search_query_top  ${PRODUTO}
+
+Clicar no botão pesquisar
+    Click Element   name=submit_search
+
+
