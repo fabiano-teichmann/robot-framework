@@ -1,10 +1,9 @@
 *** Settings ***
-Library     Selenium
+Resource  ../resource/Resource.robot
+Suite Setup     Abrir navegador
+Suite Setup     Fechar navegador
 
 
-*** Variables ***
-${URL}      http://automationpractice.com/
-${BROWSER}      chrome
 *** Test Cases ***
 Caso de Teste 01: Pesquisar produto existente
     Acessar página home do site
