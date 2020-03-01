@@ -26,14 +26,19 @@ Clicar no botão "${NAME}"
 Clicar no botão carrinho
     Click Element   xpath=//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]
 
-Quando clicar no botão "Proceed to checkout"
+E ao clicar no botão "Proceed to checkout"
     Click Element   xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a
 
+E ao clicar no botão "Create na account"
+    Click Element  id=SubmitCreate
+
+Quando clicar no botão superior direito “Sign in”
+    Click Element   xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a
 
 Conferir se o produto "${PRODUTO}" foi listado no site
     wait until Element Is visible   css=#center_column > h1
     Title Should Be     Search - My Store
-    Page Should Contain Link    xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]
+    Page Should Contain Link    xpath=//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"${PRODUTO}")]
 
 Conferir mensagem de erro "${MENSAGEM_ALERTA}"
     Wait Until Element Is Visible   xpath=//*[@id="center_column"]/p[@class='alert alert-warning']
@@ -80,3 +85,25 @@ Então o sistema deve exibir a mensagem "${MSG}"
     Element Text Should Be      xpath=//*[@id="center_column"]/p    ${MSG}
 
 
+E inserir um email "${EMAIL}" válido
+    Wait Until Element is Visible   id=email_create
+    Input Text   id=email_create    ${EMAIL}
+
+E preencher os campos obrigatórios
+    Wait Until Element is Visible   id=submitAccount
+    Input Text  id=customer_firstname   John
+    Input Text  id=customer_lastname    Wick
+    Input Text  id=passwd   !3#d!@Gddwd12*dsfDD
+    Input Text  id=address1     Rua sei lá das quantas
+    Input Text  id=city     Floripa
+    Input Text  id=postcode     56645
+    Click Element  xpath=//*[@id="id_state"]/option[2]
+    Input Text  id=phone_mobile     +5544 87848-51515
+    Input Text  id=alias    Cs06
+
+E clicar em "Register"para finalizar o cadastro
+    Clik Link   id=submitAccount
+
+Então a página de gerenciamento da conta deve ser exibida
+    Element Text Should Be  xpath=//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span   Order history and details
+    Element Text Should Be  xpath=//*[@id="center_column"]/div/div[1]/ul/li[4]/a/span   My personal information
