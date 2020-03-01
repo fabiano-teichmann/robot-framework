@@ -1,8 +1,8 @@
 *** Settings ***
 Resource  ../resource/Resource.robot
 Suite Setup     Abrir navegador
-
-#Suite Teardown  Fechar navegador
+Library     FakerLibrary
+Suite Teardown  Fechar navegador
 
 *** Variables ***
 
@@ -10,6 +10,24 @@ ${URL}  http://automationpractice.com
 ${BROWSER}  chrome
 
 *** Test Cases ***
+Faker_profile
+        ${address} =  FakerLibrary.address
+        ${country} =  FakerLibrary.country
+        ${EMAIL} =  FakerLibrary.email
+        ${first_name} =  FakerLibrary.first_name
+        ${last_name} =  FakerLibrary.last_name
+        ${phone_number} =  FakerLibrary.phone_number
+        ${profile} =  catenate
+        ...             ${\n}=======================================
+        ...             ${\n}first_name: ${first_name}
+        ...             ${\n}last_name: ${last_name}
+        ...             ${\n}address: ${address}
+        ...             ${\n}country: ${country}
+        ...             ${\n}email: ${EMAIL}
+        ...             ${\n}phone_number: ${phone_number}
+        ...             ${\n}=======================================
+        log to console  ${profile}
+
 Cenario 01: Pesquisar produto existente
 
     Dado que estou na página home do site
@@ -42,14 +60,30 @@ Cenário 04: Adicionar Produtos no Carrinho
 
 Cenário 05: Remover Produtos
     Dado que estou na página home do site
-    # E Adicionar produto carrinho
+
     Quando clicar no ícone carrinho de compras no menu superior direito
     E ao clicar no botão de remoção de produtos (delete) no produto do carrinho
     Então o sistema deve exibir a mensagem "Your shopping cart is empty."
 
+Cenário 06: Adicionar Cliente
+    Dado que estou na página home do site
+    Quando clicar no botão superior direito “Sign in”
+    ${EMAIL} =  FakerLibrary.email
+    log to console  ${EMAIL}
+    E inserir um email "${EMAIL}" válido
+    E ao clicar no botão "Create na account"
+
+    ${CITY} =  FakerLibrary.city
+    ${ZIPCODE} =  FakerLibrary.zipcode
+
+    E preencher os campos obrigatórios "${CITY}", "${ZIPCODE}"
+    E clicar em "Register" para finalizar o cadastro
+    Então a página de gerenciamento da conta deve ser exibida
+
 
 
 *** Keywords ***
+
 E Adicionar produto carrinho
     Dado que estou na página home do site
     Quando eu pesquisar pelo produto "t-shirt"

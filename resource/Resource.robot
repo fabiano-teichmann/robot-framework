@@ -79,4 +79,33 @@ Então o sistema deve exibir a mensagem "${MSG}"
     Wait Until Element is Visible      xpath=//*[@id="center_column"]/p
     Element Text Should Be      xpath=//*[@id="center_column"]/p    ${MSG}
 
+Quando clicar no botão superior direito “Sign in”
+    Click Element   xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a
 
+E inserir um email "${EMAIL}" válido
+    Wait Until Element is Visible   id=email_create
+    Input Text   id=email_create    ${EMAIL}
+
+E ao clicar no botão "Create na account"
+    Click Element  id=SubmitCreate
+
+E preencher os campos obrigatórios "${CITY}", "${ZIPCODE}"
+    Wait Until Element is Visible   id=submitAccount
+    Input Text  id=customer_firstname   John
+    Input Text  id=customer_lastname    Wick
+    Input Text  id=passwd   !3#d!@Gddwd12*dsfDD
+    Input Text  id=address1    Street Show, 20
+    Input Text  id=city     ${CITY}
+    Input Text  id=postcode     ${ZIPCODE}
+    Click Element  xpath=//*[@id="id_state"]/option[2]
+    Input Text  id=phone_mobile     99999 9999 9999
+    Input Text  id=alias    Cs06
+    Input Text  id=other    bla
+
+E clicar em "Register" para finalizar o cadastro
+    Click Element   id=submitAccount
+
+Então a página de gerenciamento da conta deve ser exibida
+    Element Text Should Be  class=page-heading  MY ACCOUNT
+    Element Text Should Be  xpath=//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span   ORDER HISTORY AND DETAILS
+    Element Text Should Be  xpath=//*[@id="center_column"]/div/div[1]/ul/li[4]/a/span   MY PERSONAL INFORMATION
