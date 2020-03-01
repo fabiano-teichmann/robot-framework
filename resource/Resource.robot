@@ -66,3 +66,17 @@ Então a tela do carrinho de compras deve ser exibido, juntamente com os dados d
     Element Text Should Be      xpath=//*[@id="product_1_1_0_0"]/td[2]/p/a   Faded Short Sleeve T-shirts
     Element Text Should Be      id=total_price   $18.51
 
+Quando clicar no ícone carrinho de compras no menu superior direito
+    Wait Until Element is Visible   class=shopping_cart
+    Click Link      xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a
+
+E ao clicar no botão de remoção de produtos (delete) no produto do carrinho
+    Wait Until Element is Visible      id=cart_title
+    Click Link  xpath=//*[@id="1_1_0_0"]
+
+
+Então o sistema deve exibir a mensagem "${MSG}"
+    Wait Until Element is Visible      xpath=//*[@id="center_column"]/p
+    Element Text Should Be      xpath=//*[@id="center_column"]/p    ${MSG}
+
+

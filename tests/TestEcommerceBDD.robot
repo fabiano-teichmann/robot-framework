@@ -2,7 +2,7 @@
 Resource  ../resource/Resource.robot
 Suite Setup     Abrir navegador
 
-Suite Teardown  Fechar navegador
+#Suite Teardown  Fechar navegador
 
 *** Variables ***
 
@@ -35,12 +35,30 @@ Cenário 04: Adicionar Produtos no Carrinho
     Dado que estou na página home do site
     Quando eu pesquisar pelo produto "t-shirt"
     Então o produto "Faded Short Sleeve T-shirts" deve ser listado na página de resultado da busca
-    Clicar no botão "Add to cart" do produto
+    E ao clicar no botão "Add to cart" do produto
     Então uma tela de confirmação deve ser exibida
     Quando clicar no botão "Proceed to checkout"
     Então a tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores
 
+Cenário 05: Remover Produtos
+    Dado que estou na página home do site
+    # E Adicionar produto carrinho
+    Quando clicar no ícone carrinho de compras no menu superior direito
+    E ao clicar no botão de remoção de produtos (delete) no produto do carrinho
+    Então o sistema deve exibir a mensagem "Your shopping cart is empty."
+
+
+
 *** Keywords ***
+E Adicionar produto carrinho
+    Dado que estou na página home do site
+    Quando eu pesquisar pelo produto "t-shirt"
+    Então o produto "Faded Short Sleeve T-shirts" deve ser listado na página de resultado da busca
+    E ao clicar no botão "Add to cart" do produto
+    Então uma tela de confirmação deve ser exibida
+    Quando clicar no botão "Proceed to checkout"
+    Então a tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores
+
 Dado que estou na página home do site
     Acessar página home do site
 
@@ -54,7 +72,7 @@ Então o produto "${PRODUTO}" deve ser listado na página de resultado da busca
 Então a página deve exibir a mensagem "${MENSAGEM_ALERTA}"
     Conferir mensagem de erro "${MENSAGEM_ALERTA}"
 
-Clicar no botão "${BUTTON}" do produto
+E ao clicar no botão "${BUTTON}" do produto
     Clicar no botão carrinho
 
 
