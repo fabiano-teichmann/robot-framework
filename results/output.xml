@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200301 16:23:04.561" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200301 18:47:21.792" rpa="false">
 <suite id="s1" name="Tests" source="/home/fabiano/PycharmProjects/robotframework/tests">
 <suite id="s1-s1" name="TestEcommerce" source="/home/fabiano/PycharmProjects/robotframework/tests/TestEcommerce.robot">
 <kw name="Abrir navegador" library="Resource" type="setup">
@@ -9,10 +9,10 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:04.750" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200301 16:23:04.750" endtime="20200301 16:23:06.241"></status>
+<msg timestamp="20200301 18:47:21.905" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200301 18:47:21.905" endtime="20200301 18:47:23.356"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:04.749" endtime="20200301 16:23:06.241"></status>
+<status status="PASS" starttime="20200301 18:47:21.905" endtime="20200301 18:47:23.356"></status>
 </kw>
 <test id="s1-s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
 <kw name="Acessar página home do site" library="Resource">
@@ -21,18 +21,18 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:06.243" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:06.242" endtime="20200301 16:23:12.031"></status>
+<msg timestamp="20200301 18:47:23.358" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:23.357" endtime="20200301 18:47:28.199"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:12.045" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:12.031" endtime="20200301 16:23:12.046"></status>
+<msg timestamp="20200301 18:47:28.204" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:28.199" endtime="20200301 18:47:28.204"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:06.242" endtime="20200301 16:23:12.046"></status>
+<status status="PASS" starttime="20200301 18:47:23.357" endtime="20200301 18:47:28.205"></status>
 </kw>
 <kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisar" library="Resource">
 <kw name="Input Text" library="SeleniumLibrary">
@@ -41,10 +41,10 @@
 <arg>id=search_query_top</arg>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:12.047" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200301 16:23:12.047" endtime="20200301 16:23:12.166"></status>
+<msg timestamp="20200301 18:47:28.205" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200301 18:47:28.205" endtime="20200301 18:47:28.315"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:12.046" endtime="20200301 16:23:12.166"></status>
+<status status="PASS" starttime="20200301 18:47:28.205" endtime="20200301 18:47:28.315"></status>
 </kw>
 <kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -52,10 +52,10 @@
 <arguments>
 <arg>name=${NAME}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:12.166" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200301 16:23:12.166" endtime="20200301 16:23:12.891"></status>
+<msg timestamp="20200301 18:47:28.315" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200301 18:47:28.315" endtime="20200301 18:47:29.071"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:12.166" endtime="20200301 16:23:12.891"></status>
+<status status="PASS" starttime="20200301 18:47:28.315" endtime="20200301 18:47:29.072"></status>
 </kw>
 <kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -63,41 +63,30 @@
 <arguments>
 <arg>css=#center_column &gt; h1</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:12.894" endtime="20200301 16:23:13.546"></status>
+<status status="PASS" starttime="20200301 18:47:29.075" endtime="20200301 18:47:29.729"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>Search - My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:13.550" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:13.546" endtime="20200301 16:23:13.550"></status>
+<msg timestamp="20200301 18:47:29.733" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:29.729" endtime="20200301 18:47:29.733"></status>
 </kw>
 <kw name="Page Should Contain Link" library="SeleniumLibrary">
 <doc>Verifies link identified by ``locator`` is found from current page.</doc>
 <arguments>
-<arg>xpath=//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
+<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200301 16:23:13.724" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-162.png"&gt;&lt;img src="selenium-screenshot-162.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200301 16:23:13.569" endtime="20200301 16:23:13.725"></status>
+<msg timestamp="20200301 18:47:29.749" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Blouse")]'.</msg>
+<status status="PASS" starttime="20200301 18:47:29.733" endtime="20200301 18:47:29.750"></status>
 </kw>
-<msg timestamp="20200301 16:23:13.726" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")]' is not a valid XPath expression.
-  (Session info: chrome=79.0.3945.130)
-</msg>
-<status status="FAIL" starttime="20200301 16:23:13.550" endtime="20200301 16:23:13.726"></status>
-</kw>
-<status status="FAIL" starttime="20200301 16:23:12.892" endtime="20200301 16:23:13.726"></status>
+<status status="PASS" starttime="20200301 18:47:29.073" endtime="20200301 18:47:29.750"></status>
 </kw>
 <tags>
 <tag>search_prd</tag>
 </tags>
-<status status="FAIL" starttime="20200301 16:23:06.241" endtime="20200301 16:23:13.726" critical="yes">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")]' is not a valid XPath expression.
-  (Session info: chrome=79.0.3945.130)
-</status>
+<status status="PASS" starttime="20200301 18:47:23.356" endtime="20200301 18:47:29.750" critical="yes"></status>
 </test>
 <test id="s1-s1-t2" name="Caso de Teste 02: Pesquisar produto não existente">
 <kw name="Acessar página home do site" library="Resource">
@@ -106,18 +95,18 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:13.728" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:13.728" endtime="20200301 16:23:15.553"></status>
+<msg timestamp="20200301 18:47:29.751" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:29.751" endtime="20200301 18:47:31.620"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:15.580" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:15.553" endtime="20200301 16:23:15.580"></status>
+<msg timestamp="20200301 18:47:31.648" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:31.620" endtime="20200301 18:47:31.649"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:13.727" endtime="20200301 16:23:15.580"></status>
+<status status="PASS" starttime="20200301 18:47:29.751" endtime="20200301 18:47:31.649"></status>
 </kw>
 <kw name="Digitar o nome do produto &quot;Produto não existe&quot; no campo de pesquisar" library="Resource">
 <kw name="Input Text" library="SeleniumLibrary">
@@ -126,10 +115,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>id=search_query_top</arg>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:15.581" level="INFO">Typing text 'Produto não existe' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200301 16:23:15.581" endtime="20200301 16:23:15.710"></status>
+<msg timestamp="20200301 18:47:31.649" level="INFO">Typing text 'Produto não existe' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200301 18:47:31.649" endtime="20200301 18:47:31.780"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:15.580" endtime="20200301 16:23:15.710"></status>
+<status status="PASS" starttime="20200301 18:47:31.649" endtime="20200301 18:47:31.780"></status>
 </kw>
 <kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -137,10 +126,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>name=${NAME}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:15.711" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200301 16:23:15.710" endtime="20200301 16:23:16.727"></status>
+<msg timestamp="20200301 18:47:31.780" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200301 18:47:31.780" endtime="20200301 18:47:33.103"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:15.710" endtime="20200301 16:23:16.727"></status>
+<status status="PASS" starttime="20200301 18:47:31.780" endtime="20200301 18:47:33.103"></status>
 </kw>
 <kw name="Conferir mensagem de erro &quot;No results were found for your search &quot;Produto não existe&quot;&quot;" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -148,7 +137,7 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:16.728" endtime="20200301 16:23:16.760"></status>
+<status status="PASS" starttime="20200301 18:47:33.103" endtime="20200301 18:47:33.131"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -156,8 +145,8 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
 <arg>${MENSAGEM_ALERTA}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:16.761" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "Produto não existe"'.</msg>
-<status status="PASS" starttime="20200301 16:23:16.760" endtime="20200301 16:23:16.781"></status>
+<msg timestamp="20200301 18:47:33.131" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "Produto não existe"'.</msg>
+<status status="PASS" starttime="20200301 18:47:33.131" endtime="20200301 18:47:33.152"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -165,24 +154,24 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>xpath=//*[@id="center_column"]/h1/span</arg>
 <arg>0 results have been found.</arg>
 </arguments>
-<msg timestamp="20200301 16:23:16.781" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/h1/span' contains exact text '0 results have been found.'.</msg>
-<status status="PASS" starttime="20200301 16:23:16.781" endtime="20200301 16:23:16.806"></status>
+<msg timestamp="20200301 18:47:33.152" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/h1/span' contains exact text '0 results have been found.'.</msg>
+<status status="PASS" starttime="20200301 18:47:33.152" endtime="20200301 18:47:33.177"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:16.728" endtime="20200301 16:23:16.806"></status>
+<status status="PASS" starttime="20200301 18:47:33.103" endtime="20200301 18:47:33.177"></status>
 </kw>
 <tags>
 <tag>prd_not_exit</tag>
 </tags>
-<status status="PASS" starttime="20200301 16:23:13.727" endtime="20200301 16:23:16.806" critical="yes"></status>
+<status status="PASS" starttime="20200301 18:47:29.750" endtime="20200301 18:47:33.177" critical="yes"></status>
 </test>
 <kw name="Fechar navegador" library="Resource" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200301 16:23:16.807" endtime="20200301 16:23:16.866"></status>
+<status status="PASS" starttime="20200301 18:47:33.178" endtime="20200301 18:47:33.239"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:16.807" endtime="20200301 16:23:16.866"></status>
+<status status="PASS" starttime="20200301 18:47:33.178" endtime="20200301 18:47:33.239"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:04.581" endtime="20200301 16:23:16.866"></status>
+<status status="PASS" starttime="20200301 18:47:21.812" endtime="20200301 18:47:33.239"></status>
 </suite>
 <suite id="s1-s2" name="TestEcommerceBDD" source="/home/fabiano/PycharmProjects/robotframework/tests/TestEcommerceBDD.robot">
 <kw name="Abrir navegador" library="Resource" type="setup">
@@ -192,12 +181,92 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:16.876" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200301 16:23:16.876" endtime="20200301 16:23:18.366"></status>
+<msg timestamp="20200301 18:47:33.510" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200301 18:47:33.509" endtime="20200301 18:47:34.989"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:16.875" endtime="20200301 16:23:18.366"></status>
+<status status="PASS" starttime="20200301 18:47:33.508" endtime="20200301 18:47:34.989"></status>
 </kw>
-<test id="s1-s2-t1" name="Cenario 01: Pesquisar produto existente">
+<test id="s1-s2-t1" name="Faker_profile">
+<kw name="Address" library="FakerLibrary">
+<doc>:example '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<assign>
+<var>${address}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.992" level="INFO">${address} = 05305 Marvin Road
+Reesehaven, CT 56134</msg>
+<status status="PASS" starttime="20200301 18:47:34.990" endtime="20200301 18:47:34.993"></status>
+</kw>
+<kw name="Country" library="FakerLibrary">
+<assign>
+<var>${country}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.995" level="INFO">${country} = Vietnam</msg>
+<status status="PASS" starttime="20200301 18:47:34.994" endtime="20200301 18:47:34.995"></status>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<assign>
+<var>${EMAIL}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.996" level="INFO">${EMAIL} = grossandrew@gmail.com</msg>
+<status status="PASS" starttime="20200301 18:47:34.995" endtime="20200301 18:47:34.996"></status>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<assign>
+<var>${first_name}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.996" level="INFO">${first_name} = Michael</msg>
+<status status="PASS" starttime="20200301 18:47:34.996" endtime="20200301 18:47:34.996"></status>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<assign>
+<var>${last_name}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.997" level="INFO">${last_name} = White</msg>
+<status status="PASS" starttime="20200301 18:47:34.996" endtime="20200301 18:47:34.997"></status>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<assign>
+<var>${phone_number}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.997" level="INFO">${phone_number} = 999-867-7774x688</msg>
+<status status="PASS" starttime="20200301 18:47:34.997" endtime="20200301 18:47:34.997"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${\n}=======================================</arg>
+<arg>${\n}first_name: ${first_name}</arg>
+<arg>${\n}last_name: ${last_name}</arg>
+<arg>${\n}address: ${address}</arg>
+<arg>${\n}country: ${country}</arg>
+<arg>${\n}email: ${EMAIL}</arg>
+<arg>${\n}phone_number: ${phone_number}</arg>
+<arg>${\n}=======================================</arg>
+</arguments>
+<assign>
+<var>${profile}</var>
+</assign>
+<msg timestamp="20200301 18:47:34.998" level="INFO">${profile} = 
+======================================= 
+first_name: Michael 
+last_name: White 
+address: 05305 Marvin Road
+Reesehaven, CT 56134 
+country: Vietnam 
+email: grossandrew@gmail.com 
+phone_number: 999-867-...</msg>
+<status status="PASS" starttime="20200301 18:47:34.997" endtime="20200301 18:47:34.998"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${profile}</arg>
+</arguments>
+<status status="PASS" starttime="20200301 18:47:34.998" endtime="20200301 18:47:34.999"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:34.989" endtime="20200301 18:47:35.000" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="Cenario 01: Pesquisar produto existente">
 <kw name="Dado que estou na página home do site">
 <kw name="Acessar página home do site" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
@@ -205,20 +274,20 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:18.368" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:18.368" endtime="20200301 16:23:23.063"></status>
+<msg timestamp="20200301 18:47:35.003" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:35.002" endtime="20200301 18:47:39.785"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:23.070" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:23.064" endtime="20200301 16:23:23.070"></status>
+<msg timestamp="20200301 18:47:39.791" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:39.785" endtime="20200301 18:47:39.791"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:18.367" endtime="20200301 16:23:23.071"></status>
+<status status="PASS" starttime="20200301 18:47:35.002" endtime="20200301 18:47:39.791"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:18.367" endtime="20200301 16:23:23.071"></status>
+<status status="PASS" starttime="20200301 18:47:35.001" endtime="20200301 18:47:39.791"></status>
 </kw>
 <kw name="Quando eu pesquisar pelo produto &quot;Blouse&quot;">
 <kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisar" library="Resource">
@@ -228,10 +297,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>id=search_query_top</arg>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:23.072" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200301 16:23:23.071" endtime="20200301 16:23:23.180"></status>
+<msg timestamp="20200301 18:47:39.792" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200301 18:47:39.792" endtime="20200301 18:47:39.895"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:23.071" endtime="20200301 16:23:23.180"></status>
+<status status="PASS" starttime="20200301 18:47:39.792" endtime="20200301 18:47:39.896"></status>
 </kw>
 <kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -239,12 +308,12 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>name=${NAME}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:23.180" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200301 16:23:23.180" endtime="20200301 16:23:23.891"></status>
+<msg timestamp="20200301 18:47:39.896" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200301 18:47:39.896" endtime="20200301 18:47:40.728"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:23.180" endtime="20200301 16:23:23.891"></status>
+<status status="PASS" starttime="20200301 18:47:39.896" endtime="20200301 18:47:40.728"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:23.071" endtime="20200301 16:23:23.891"></status>
+<status status="PASS" starttime="20200301 18:47:39.791" endtime="20200301 18:47:40.728"></status>
 </kw>
 <kw name="Então o produto &quot;Blouse&quot; deve ser listado na página de resultado da busca">
 <kw name="Conferir se o produto &quot;${PRODUTO}&quot; foi listado no site" library="Resource">
@@ -253,42 +322,31 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>css=#center_column &gt; h1</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:23.892" endtime="20200301 16:23:24.485"></status>
+<status status="PASS" starttime="20200301 18:47:40.729" endtime="20200301 18:47:41.326"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>Search - My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:24.488" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:24.485" endtime="20200301 16:23:24.488"></status>
+<msg timestamp="20200301 18:47:41.329" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:41.326" endtime="20200301 18:47:41.329"></status>
 </kw>
 <kw name="Page Should Contain Link" library="SeleniumLibrary">
 <doc>Verifies link identified by ``locator`` is found from current page.</doc>
 <arguments>
-<arg>xpath=//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
+<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200301 16:23:24.633" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-163.png"&gt;&lt;img src="selenium-screenshot-163.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200301 16:23:24.508" endtime="20200301 16:23:24.633"></status>
+<msg timestamp="20200301 18:47:41.346" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Blouse")]'.</msg>
+<status status="PASS" starttime="20200301 18:47:41.329" endtime="20200301 18:47:41.346"></status>
 </kw>
-<msg timestamp="20200301 16:23:24.634" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")]' is not a valid XPath expression.
-  (Session info: chrome=79.0.3945.130)
-</msg>
-<status status="FAIL" starttime="20200301 16:23:24.489" endtime="20200301 16:23:24.634"></status>
+<status status="PASS" starttime="20200301 18:47:40.728" endtime="20200301 18:47:41.346"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:23.892" endtime="20200301 16:23:24.634"></status>
+<status status="PASS" starttime="20200301 18:47:40.728" endtime="20200301 18:47:41.346"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:23.892" endtime="20200301 16:23:24.634"></status>
-</kw>
-<status status="FAIL" starttime="20200301 16:23:18.366" endtime="20200301 16:23:24.635" critical="yes">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Blouse")]' is not a valid XPath expression.
-  (Session info: chrome=79.0.3945.130)
-</status>
+<status status="PASS" starttime="20200301 18:47:35.000" endtime="20200301 18:47:41.346" critical="yes"></status>
 </test>
-<test id="s1-s2-t2" name="Cenário 02: Pesquisar produto não existente">
+<test id="s1-s2-t3" name="Cenário 02: Pesquisar produto não existente">
 <kw name="Dado que estou na página home do site">
 <kw name="Acessar página home do site" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
@@ -296,20 +354,20 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:24.637" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:24.637" endtime="20200301 16:23:26.902"></status>
+<msg timestamp="20200301 18:47:41.348" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:41.348" endtime="20200301 18:47:43.711"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:26.931" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:26.902" endtime="20200301 16:23:26.931"></status>
+<msg timestamp="20200301 18:47:43.747" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:43.712" endtime="20200301 18:47:43.747"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:24.636" endtime="20200301 16:23:26.931"></status>
+<status status="PASS" starttime="20200301 18:47:41.347" endtime="20200301 18:47:43.747"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:24.636" endtime="20200301 16:23:26.932"></status>
+<status status="PASS" starttime="20200301 18:47:41.347" endtime="20200301 18:47:43.747"></status>
 </kw>
 <kw name="Quando eu pesquisar pelo produto &quot;Produto não existe&quot;">
 <kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisar" library="Resource">
@@ -319,10 +377,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>id=search_query_top</arg>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:26.933" level="INFO">Typing text 'Produto não existe' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200301 16:23:26.933" endtime="20200301 16:23:27.064"></status>
+<msg timestamp="20200301 18:47:43.750" level="INFO">Typing text 'Produto não existe' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200301 18:47:43.749" endtime="20200301 18:47:43.896"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:26.932" endtime="20200301 16:23:27.064"></status>
+<status status="PASS" starttime="20200301 18:47:43.748" endtime="20200301 18:47:43.896"></status>
 </kw>
 <kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -330,12 +388,12 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>name=${NAME}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:27.065" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200301 16:23:27.064" endtime="20200301 16:23:28.114"></status>
+<msg timestamp="20200301 18:47:43.897" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200301 18:47:43.896" endtime="20200301 18:47:44.945"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:27.064" endtime="20200301 16:23:28.114"></status>
+<status status="PASS" starttime="20200301 18:47:43.896" endtime="20200301 18:47:44.945"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:26.932" endtime="20200301 16:23:28.114"></status>
+<status status="PASS" starttime="20200301 18:47:43.747" endtime="20200301 18:47:44.946"></status>
 </kw>
 <kw name="Então a página deve exibir a mensagem &quot;No results were found for your search &quot;Produto não existe&quot;&quot;">
 <kw name="Conferir mensagem de erro &quot;${MENSAGEM_ALERTA}&quot;" library="Resource">
@@ -344,7 +402,7 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:28.115" endtime="20200301 16:23:28.144"></status>
+<status status="PASS" starttime="20200301 18:47:44.946" endtime="20200301 18:47:44.977"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -352,8 +410,8 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
 <arg>${MENSAGEM_ALERTA}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:28.144" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "Produto não existe"'.</msg>
-<status status="PASS" starttime="20200301 16:23:28.144" endtime="20200301 16:23:28.166"></status>
+<msg timestamp="20200301 18:47:44.977" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "Produto não existe"'.</msg>
+<status status="PASS" starttime="20200301 18:47:44.977" endtime="20200301 18:47:44.999"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -361,16 +419,16 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>xpath=//*[@id="center_column"]/h1/span</arg>
 <arg>0 results have been found.</arg>
 </arguments>
-<msg timestamp="20200301 16:23:28.167" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/h1/span' contains exact text '0 results have been found.'.</msg>
-<status status="PASS" starttime="20200301 16:23:28.166" endtime="20200301 16:23:28.193"></status>
+<msg timestamp="20200301 18:47:45.000" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/h1/span' contains exact text '0 results have been found.'.</msg>
+<status status="PASS" starttime="20200301 18:47:45.000" endtime="20200301 18:47:45.024"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:28.115" endtime="20200301 16:23:28.193"></status>
+<status status="PASS" starttime="20200301 18:47:44.946" endtime="20200301 18:47:45.025"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:28.114" endtime="20200301 16:23:28.193"></status>
+<status status="PASS" starttime="20200301 18:47:44.946" endtime="20200301 18:47:45.025"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:24.635" endtime="20200301 16:23:28.193" critical="yes"></status>
+<status status="PASS" starttime="20200301 18:47:41.347" endtime="20200301 18:47:45.025" critical="yes"></status>
 </test>
-<test id="s1-s2-t3" name="Cenário 03: Listar Produtos">
+<test id="s1-s2-t4" name="Cenário 03: Listar Produtos">
 <kw name="Dado que estou na página home do site">
 <kw name="Acessar página home do site" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
@@ -378,20 +436,20 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:28.194" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:28.194" endtime="20200301 16:23:30.146"></status>
+<msg timestamp="20200301 18:47:45.026" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:45.026" endtime="20200301 18:47:46.853"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:30.178" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:30.146" endtime="20200301 16:23:30.178"></status>
+<msg timestamp="20200301 18:47:46.884" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:46.854" endtime="20200301 18:47:46.884"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:28.194" endtime="20200301 16:23:30.178"></status>
+<status status="PASS" starttime="20200301 18:47:45.026" endtime="20200301 18:47:46.884"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:28.194" endtime="20200301 16:23:30.178"></status>
+<status status="PASS" starttime="20200301 18:47:45.026" endtime="20200301 18:47:46.884"></status>
 </kw>
 <kw name="Quando passar o mouse na categoria &quot;WOMEN&quot;" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -399,14 +457,14 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:30.179" endtime="20200301 16:23:30.206"></status>
+<status status="PASS" starttime="20200301 18:47:46.885" endtime="20200301 18:47:46.912"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:30.206" endtime="20200301 16:23:30.228"></status>
+<status status="PASS" starttime="20200301 18:47:46.912" endtime="20200301 18:47:46.934"></status>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
@@ -414,10 +472,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
 <arg>${CATEGORIA}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:30.228" level="INFO">Verifying element 'xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]' contains exact text 'WOMEN'.</msg>
-<status status="PASS" starttime="20200301 16:23:30.228" endtime="20200301 16:23:30.255"></status>
+<msg timestamp="20200301 18:47:46.934" level="INFO">Verifying element 'xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]' contains exact text 'WOMEN'.</msg>
+<status status="PASS" starttime="20200301 18:47:46.934" endtime="20200301 18:47:46.957"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:30.179" endtime="20200301 16:23:30.255"></status>
+<status status="PASS" starttime="20200301 18:47:46.884" endtime="20200301 18:47:46.958"></status>
 </kw>
 <kw name="Então as sub categorias devem ser exibidas" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -425,17 +483,17 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:30.256" endtime="20200301 16:23:30.280"></status>
+<status status="PASS" starttime="20200301 18:47:46.958" endtime="20200301 18:47:46.982"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]</arg>
 </arguments>
-<msg timestamp="20200301 16:23:30.305" level="INFO">Element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]' is displayed.</msg>
-<status status="PASS" starttime="20200301 16:23:30.280" endtime="20200301 16:23:30.305"></status>
+<msg timestamp="20200301 18:47:47.008" level="INFO">Element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]' is displayed.</msg>
+<status status="PASS" starttime="20200301 18:47:46.982" endtime="20200301 18:47:47.008"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:30.255" endtime="20200301 16:23:30.306"></status>
+<status status="PASS" starttime="20200301 18:47:46.958" endtime="20200301 18:47:47.008"></status>
 </kw>
 <kw name="Quando clicar na sub categoria &quot;Summer Dresses&quot;" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -443,17 +501,17 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:30.306" endtime="20200301 16:23:30.330"></status>
+<status status="PASS" starttime="20200301 18:47:47.009" endtime="20200301 18:47:47.035"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"${SUB_CATEGORIA}")]</arg>
 </arguments>
-<msg timestamp="20200301 16:23:30.330" level="INFO">Clicking link 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"Summer Dresses")]'.</msg>
-<status status="PASS" starttime="20200301 16:23:30.330" endtime="20200301 16:23:32.986"></status>
+<msg timestamp="20200301 18:47:47.036" level="INFO">Clicking link 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"Summer Dresses")]'.</msg>
+<status status="PASS" starttime="20200301 18:47:47.036" endtime="20200301 18:47:49.642"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:30.306" endtime="20200301 16:23:32.987"></status>
+<status status="PASS" starttime="20200301 18:47:47.008" endtime="20200301 18:47:49.642"></status>
 </kw>
 <kw name="Então uma página com os produtos da sub categoria &quot;Summer Dresses&quot; deve ser exibida" library="Resource">
 <kw name="Element Text Should Be" library="SeleniumLibrary">
@@ -462,14 +520,14 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>class=category-name</arg>
 <arg>Summer Dresses</arg>
 </arguments>
-<msg timestamp="20200301 16:23:32.992" level="INFO">Verifying element 'class=category-name' contains exact text 'Summer Dresses'.</msg>
-<status status="PASS" starttime="20200301 16:23:32.991" endtime="20200301 16:23:33.060"></status>
+<msg timestamp="20200301 18:47:49.643" level="INFO">Verifying element 'class=category-name' contains exact text 'Summer Dresses'.</msg>
+<status status="PASS" starttime="20200301 18:47:49.643" endtime="20200301 18:47:49.673"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:32.988" endtime="20200301 16:23:33.060"></status>
+<status status="PASS" starttime="20200301 18:47:49.642" endtime="20200301 18:47:49.673"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:28.193" endtime="20200301 16:23:33.060" critical="yes"></status>
+<status status="PASS" starttime="20200301 18:47:45.025" endtime="20200301 18:47:49.674" critical="yes"></status>
 </test>
-<test id="s1-s2-t4" name="Cenário 04: Adicionar Produtos no Carrinho">
+<test id="s1-s2-t5" name="Cenário 04: Adicionar Produtos no Carrinho">
 <kw name="Dado que estou na página home do site">
 <kw name="Acessar página home do site" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
@@ -477,20 +535,20 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:33.062" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:33.062" endtime="20200301 16:23:34.886"></status>
+<msg timestamp="20200301 18:47:49.675" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:49.675" endtime="20200301 18:47:51.794"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:34.916" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:34.886" endtime="20200301 16:23:34.916"></status>
+<msg timestamp="20200301 18:47:51.822" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:51.794" endtime="20200301 18:47:51.823"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:33.062" endtime="20200301 16:23:34.916"></status>
+<status status="PASS" starttime="20200301 18:47:49.675" endtime="20200301 18:47:51.823"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:33.061" endtime="20200301 16:23:34.916"></status>
+<status status="PASS" starttime="20200301 18:47:49.675" endtime="20200301 18:47:51.823"></status>
 </kw>
 <kw name="Quando eu pesquisar pelo produto &quot;t-shirt&quot;">
 <kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisar" library="Resource">
@@ -500,10 +558,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>id=search_query_top</arg>
 <arg>${PRODUTO}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:34.918" level="INFO">Typing text 't-shirt' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200301 16:23:34.918" endtime="20200301 16:23:35.038"></status>
+<msg timestamp="20200301 18:47:51.824" level="INFO">Typing text 't-shirt' into text field 'id=search_query_top'.</msg>
+<status status="PASS" starttime="20200301 18:47:51.824" endtime="20200301 18:47:51.923"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:34.917" endtime="20200301 16:23:35.038"></status>
+<status status="PASS" starttime="20200301 18:47:51.823" endtime="20200301 18:47:51.924"></status>
 </kw>
 <kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -511,12 +569,12 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>name=${NAME}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:35.039" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200301 16:23:35.039" endtime="20200301 16:23:36.284"></status>
+<msg timestamp="20200301 18:47:51.924" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20200301 18:47:51.924" endtime="20200301 18:47:53.497"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:35.039" endtime="20200301 16:23:36.284"></status>
+<status status="PASS" starttime="20200301 18:47:51.924" endtime="20200301 18:47:53.498"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:34.917" endtime="20200301 16:23:36.284"></status>
+<status status="PASS" starttime="20200301 18:47:51.823" endtime="20200301 18:47:53.498"></status>
 </kw>
 <kw name="Então o produto &quot;Faded Short Sleeve T-shirts&quot; deve ser listado na página de resultado da busca">
 <kw name="Conferir se o produto &quot;${PRODUTO}&quot; foi listado no site" library="Resource">
@@ -525,42 +583,112 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>css=#center_column &gt; h1</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:36.285" endtime="20200301 16:23:36.311"></status>
+<status status="PASS" starttime="20200301 18:47:53.498" endtime="20200301 18:47:53.523"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>Search - My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:36.316" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:36.311" endtime="20200301 16:23:36.316"></status>
+<msg timestamp="20200301 18:47:53.527" level="INFO">Page title is 'Search - My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:53.523" endtime="20200301 18:47:53.527"></status>
 </kw>
 <kw name="Page Should Contain Link" library="SeleniumLibrary">
 <doc>Verifies link identified by ``locator`` is found from current page.</doc>
 <arguments>
-<arg>xpath=//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
+<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200301 16:23:36.440" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-164.png"&gt;&lt;img src="selenium-screenshot-164.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200301 16:23:36.339" endtime="20200301 16:23:36.440"></status>
+<msg timestamp="20200301 18:47:53.542" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Faded Short Sleeve T-shirts")]'.</msg>
+<status status="PASS" starttime="20200301 18:47:53.527" endtime="20200301 18:47:53.542"></status>
 </kw>
-<msg timestamp="20200301 16:23:36.440" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Faded Short Sleeve T-shirts")] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Faded Short Sleeve T-shirts")]' is not a valid XPath expression.
-  (Session info: chrome=79.0.3945.130)
-</msg>
-<status status="FAIL" starttime="20200301 16:23:36.316" endtime="20200301 16:23:36.440"></status>
+<status status="PASS" starttime="20200301 18:47:53.498" endtime="20200301 18:47:53.542"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:36.285" endtime="20200301 16:23:36.441"></status>
+<status status="PASS" starttime="20200301 18:47:53.498" endtime="20200301 18:47:53.542"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:36.284" endtime="20200301 16:23:36.441"></status>
+<kw name="E ao clicar no botão &quot;Add to cart&quot; do produto">
+<kw name="Clicar no botão carrinho" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]</arg>
+</arguments>
+<msg timestamp="20200301 18:47:53.543" level="INFO">Clicking element 'xpath=//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]'.</msg>
+<status status="PASS" starttime="20200301 18:47:53.543" endtime="20200301 18:47:53.609"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:33.061" endtime="20200301 16:23:36.441" critical="yes">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Faded Short Sleeve T-shirts")] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="center_column"]s//a[@class="product-name"][contains(text(),"Faded Short Sleeve T-shirts")]' is not a valid XPath expression.
-  (Session info: chrome=79.0.3945.130)
-</status>
+<status status="PASS" starttime="20200301 18:47:53.542" endtime="20200301 18:47:53.609"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:53.542" endtime="20200301 18:47:53.609"></status>
+</kw>
+<kw name="Então uma tela de confirmação deve ser exibida" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span[contains(text(), "Proceed to checkout")]</arg>
+</arguments>
+<status status="PASS" starttime="20200301 18:47:53.610" endtime="20200301 18:47:54.630"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span</arg>
+<arg>Proceed to checkout</arg>
+</arguments>
+<msg timestamp="20200301 18:47:54.631" level="INFO">Verifying element 'xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span' contains exact text 'Proceed to checkout'.</msg>
+<status status="PASS" starttime="20200301 18:47:54.630" endtime="20200301 18:47:54.661"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:53.609" endtime="20200301 18:47:54.661"></status>
+</kw>
+<kw name="Quando clicar no botão &quot;Proceed to checkout&quot;" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a</arg>
+</arguments>
+<msg timestamp="20200301 18:47:54.662" level="INFO">Clicking element 'xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a'.</msg>
+<status status="PASS" starttime="20200301 18:47:54.662" endtime="20200301 18:47:56.391"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:54.662" endtime="20200301 18:47:56.391"></status>
+</kw>
+<kw name="Então a tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/p[2]/a[1]/span</arg>
+</arguments>
+<status status="PASS" starttime="20200301 18:47:56.395" endtime="20200301 18:47:56.473"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>class=heading-counter</arg>
+<arg>Your shopping cart contains: 1 Product</arg>
+</arguments>
+<msg timestamp="20200301 18:47:56.479" level="INFO">Verifying element 'class=heading-counter' contains exact text 'Your shopping cart contains: 1 Product'.</msg>
+<status status="PASS" starttime="20200301 18:47:56.473" endtime="20200301 18:47:56.511"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="product_1_1_0_0"]/td[2]/p/a</arg>
+<arg>Faded Short Sleeve T-shirts</arg>
+</arguments>
+<msg timestamp="20200301 18:47:56.511" level="INFO">Verifying element 'xpath=//*[@id="product_1_1_0_0"]/td[2]/p/a' contains exact text 'Faded Short Sleeve T-shirts'.</msg>
+<status status="PASS" starttime="20200301 18:47:56.511" endtime="20200301 18:47:56.541"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>id=total_price</arg>
+<arg>$18.51</arg>
+</arguments>
+<msg timestamp="20200301 18:47:56.541" level="INFO">Verifying element 'id=total_price' contains exact text '$18.51'.</msg>
+<status status="PASS" starttime="20200301 18:47:56.541" endtime="20200301 18:47:56.565"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:56.392" endtime="20200301 18:47:56.565"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:49.674" endtime="20200301 18:47:56.565" critical="yes"></status>
 </test>
-<test id="s1-s2-t5" name="Cenário 05: Remover Produtos">
+<test id="s1-s2-t6" name="Cenário 05: Remover Produtos">
 <kw name="Dado que estou na página home do site">
 <kw name="Acessar página home do site" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
@@ -568,20 +696,20 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:36.442" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:36.442" endtime="20200301 16:23:38.238"></status>
+<msg timestamp="20200301 18:47:56.566" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:47:56.566" endtime="20200301 18:47:58.583"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:38.265" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:38.239" endtime="20200301 16:23:38.265"></status>
+<msg timestamp="20200301 18:47:58.611" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:47:58.583" endtime="20200301 18:47:58.611"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:36.442" endtime="20200301 16:23:38.266"></status>
+<status status="PASS" starttime="20200301 18:47:56.566" endtime="20200301 18:47:58.611"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:36.442" endtime="20200301 16:23:38.266"></status>
+<status status="PASS" starttime="20200301 18:47:56.566" endtime="20200301 18:47:58.611"></status>
 </kw>
 <kw name="Quando clicar no ícone carrinho de compras no menu superior direito" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -589,17 +717,17 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>class=shopping_cart</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:38.266" endtime="20200301 16:23:38.293"></status>
+<status status="PASS" starttime="20200301 18:47:58.611" endtime="20200301 18:47:58.637"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a</arg>
 </arguments>
-<msg timestamp="20200301 16:23:38.294" level="INFO">Clicking link 'xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a'.</msg>
-<status status="PASS" starttime="20200301 16:23:38.293" endtime="20200301 16:23:39.882"></status>
+<msg timestamp="20200301 18:47:58.637" level="INFO">Clicking link 'xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a'.</msg>
+<status status="PASS" starttime="20200301 18:47:58.637" endtime="20200301 18:47:59.729"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:38.266" endtime="20200301 16:23:39.883"></status>
+<status status="PASS" starttime="20200301 18:47:58.611" endtime="20200301 18:47:59.729"></status>
 </kw>
 <kw name="E ao clicar no botão de remoção de produtos (delete) no produto do carrinho" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
@@ -607,27 +735,40 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>id=cart_title</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:39.886" endtime="20200301 16:23:39.925"></status>
+<status status="PASS" starttime="20200301 18:47:59.730" endtime="20200301 18:47:59.779"></status>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <doc>Clicks a link identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="1_1_0_0"]</arg>
 </arguments>
-<msg timestamp="20200301 16:23:39.925" level="INFO">Clicking link 'xpath=//*[@id="1_1_0_0"]'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200301 16:23:40.040" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-165.png"&gt;&lt;img src="selenium-screenshot-165.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200301 16:23:39.937" endtime="20200301 16:23:40.040"></status>
+<msg timestamp="20200301 18:47:59.779" level="INFO">Clicking link 'xpath=//*[@id="1_1_0_0"]'.</msg>
+<status status="PASS" starttime="20200301 18:47:59.779" endtime="20200301 18:47:59.845"></status>
 </kw>
-<msg timestamp="20200301 16:23:40.041" level="FAIL">Link with locator 'xpath=//*[@id="1_1_0_0"]' not found.</msg>
-<status status="FAIL" starttime="20200301 16:23:39.925" endtime="20200301 16:23:40.041"></status>
+<status status="PASS" starttime="20200301 18:47:59.729" endtime="20200301 18:47:59.845"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:39.884" endtime="20200301 16:23:40.041"></status>
+<kw name="Então o sistema deve exibir a mensagem &quot;Your shopping cart is empty.&quot;" library="Resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/p</arg>
+</arguments>
+<status status="PASS" starttime="20200301 18:47:59.846" endtime="20200301 18:48:01.228"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:36.441" endtime="20200301 16:23:40.041" critical="yes">Link with locator 'xpath=//*[@id="1_1_0_0"]' not found.</status>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/p</arg>
+<arg>${MSG}</arg>
+</arguments>
+<msg timestamp="20200301 18:48:01.228" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p' contains exact text 'Your shopping cart is empty.'.</msg>
+<status status="PASS" starttime="20200301 18:48:01.228" endtime="20200301 18:48:01.251"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:59.845" endtime="20200301 18:48:01.251"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:56.565" endtime="20200301 18:48:01.251" critical="yes"></status>
 </test>
-<test id="s1-s2-t6" name="Cenário 06: Adicionar Cliente">
+<test id="s1-s2-t7" name="Cenário 06: Adicionar Cliente">
 <kw name="Dado que estou na página home do site">
 <kw name="Acessar página home do site" library="Resource">
 <kw name="Go To" library="SeleniumLibrary">
@@ -635,20 +776,20 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:40.044" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200301 16:23:40.043" endtime="20200301 16:23:41.552"></status>
+<msg timestamp="20200301 18:48:01.252" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20200301 18:48:01.252" endtime="20200301 18:48:03.032"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that the current page title equals ``title``.</doc>
 <arguments>
 <arg>My Store</arg>
 </arguments>
-<msg timestamp="20200301 16:23:41.587" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200301 16:23:41.552" endtime="20200301 16:23:41.587"></status>
+<msg timestamp="20200301 18:48:03.063" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20200301 18:48:03.032" endtime="20200301 18:48:03.063"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:40.043" endtime="20200301 16:23:41.588"></status>
+<status status="PASS" starttime="20200301 18:48:01.252" endtime="20200301 18:48:03.063"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:40.043" endtime="20200301 16:23:41.588"></status>
+<status status="PASS" starttime="20200301 18:48:01.251" endtime="20200301 18:48:03.063"></status>
 </kw>
 <kw name="Quando clicar no botão superior direito “Sign in”" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -656,18 +797,32 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a</arg>
 </arguments>
-<msg timestamp="20200301 16:23:41.589" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a'.</msg>
-<status status="PASS" starttime="20200301 16:23:41.588" endtime="20200301 16:23:43.262"></status>
+<msg timestamp="20200301 18:48:03.064" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a'.</msg>
+<status status="PASS" starttime="20200301 18:48:03.064" endtime="20200301 18:48:05.274"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:41.588" endtime="20200301 16:23:43.263"></status>
+<status status="PASS" starttime="20200301 18:48:03.063" endtime="20200301 18:48:05.274"></status>
 </kw>
-<kw name="E inserir um email &quot;test_robot@gmail.com&quot; válido" library="Resource">
+<kw name="Email" library="FakerLibrary">
+<assign>
+<var>${EMAIL}</var>
+</assign>
+<msg timestamp="20200301 18:48:05.275" level="INFO">${EMAIL} = ramirezdaniel@wilson.com</msg>
+<status status="PASS" starttime="20200301 18:48:05.274" endtime="20200301 18:48:05.275"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${EMAIL}</arg>
+</arguments>
+<status status="PASS" starttime="20200301 18:48:05.276" endtime="20200301 18:48:05.276"></status>
+</kw>
+<kw name="E inserir um email &quot;${EMAIL}&quot; válido" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>id=email_create</arg>
 </arguments>
-<status status="PASS" starttime="20200301 16:23:43.263" endtime="20200301 16:23:43.302"></status>
+<status status="PASS" starttime="20200301 18:48:05.277" endtime="20200301 18:48:05.312"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -675,10 +830,10 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arg>id=email_create</arg>
 <arg>${EMAIL}</arg>
 </arguments>
-<msg timestamp="20200301 16:23:43.303" level="INFO">Typing text 'test_robot@gmail.com' into text field 'id=email_create'.</msg>
-<status status="PASS" starttime="20200301 16:23:43.302" endtime="20200301 16:23:43.439"></status>
+<msg timestamp="20200301 18:48:05.312" level="INFO">Typing text 'ramirezdaniel@wilson.com' into text field 'id=email_create'.</msg>
+<status status="PASS" starttime="20200301 18:48:05.312" endtime="20200301 18:48:05.455"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:43.263" endtime="20200301 16:23:43.439"></status>
+<status status="PASS" starttime="20200301 18:48:05.276" endtime="20200301 18:48:05.456"></status>
 </kw>
 <kw name="E ao clicar no botão &quot;Create na account&quot;" library="Resource">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -686,46 +841,192 @@ SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id="ce
 <arguments>
 <arg>id=SubmitCreate</arg>
 </arguments>
-<msg timestamp="20200301 16:23:43.440" level="INFO">Clicking element 'id=SubmitCreate'.</msg>
-<status status="PASS" starttime="20200301 16:23:43.440" endtime="20200301 16:23:43.585"></status>
+<msg timestamp="20200301 18:48:05.456" level="INFO">Clicking element 'id=SubmitCreate'.</msg>
+<status status="PASS" starttime="20200301 18:48:05.456" endtime="20200301 18:48:05.565"></status>
 </kw>
-<status status="PASS" starttime="20200301 16:23:43.439" endtime="20200301 16:23:43.586"></status>
+<status status="PASS" starttime="20200301 18:48:05.456" endtime="20200301 18:48:05.565"></status>
 </kw>
-<kw name="E preencher os campos obrigatórios" library="Resource">
+<kw name="City" library="FakerLibrary">
+<doc>:example 'Sashabury'</doc>
+<assign>
+<var>${CITY}</var>
+</assign>
+<msg timestamp="20200301 18:48:05.565" level="INFO">${CITY} = North Gregg</msg>
+<status status="PASS" starttime="20200301 18:48:05.565" endtime="20200301 18:48:05.565"></status>
+</kw>
+<kw name="Zipcode" library="FakerLibrary">
+<assign>
+<var>${ZIPCODE}</var>
+</assign>
+<msg timestamp="20200301 18:48:05.566" level="INFO">${ZIPCODE} = 00916</msg>
+<status status="PASS" starttime="20200301 18:48:05.565" endtime="20200301 18:48:05.566"></status>
+</kw>
+<kw name="E preencher os campos obrigatórios &quot;${CITY}&quot;, &quot;${ZIPCODE}&quot;" library="Resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>id=submitAccount</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200301 16:23:48.833" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-166.png"&gt;&lt;img src="selenium-screenshot-166.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200301 16:23:48.713" endtime="20200301 16:23:48.833"></status>
+<status status="PASS" starttime="20200301 18:48:05.566" endtime="20200301 18:48:07.241"></status>
 </kw>
-<msg timestamp="20200301 16:23:48.833" level="FAIL">Element 'id=submitAccount' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20200301 16:23:43.587" endtime="20200301 16:23:48.833"></status>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=customer_firstname</arg>
+<arg>John</arg>
+</arguments>
+<msg timestamp="20200301 18:48:07.242" level="INFO">Typing text 'John' into text field 'id=customer_firstname'.</msg>
+<status status="PASS" starttime="20200301 18:48:07.242" endtime="20200301 18:48:07.391"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:43.586" endtime="20200301 16:23:48.833"></status>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=customer_lastname</arg>
+<arg>Wick</arg>
+</arguments>
+<msg timestamp="20200301 18:48:07.391" level="INFO">Typing text 'Wick' into text field 'id=customer_lastname'.</msg>
+<status status="PASS" starttime="20200301 18:48:07.391" endtime="20200301 18:48:07.570"></status>
 </kw>
-<status status="FAIL" starttime="20200301 16:23:40.042" endtime="20200301 16:23:48.833" critical="yes">Element 'id=submitAccount' not visible after 5 seconds.</status>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=passwd</arg>
+<arg>!3#d!@Gddwd12*dsfDD</arg>
+</arguments>
+<msg timestamp="20200301 18:48:07.571" level="INFO">Typing text '!3#d!@Gddwd12*dsfDD' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20200301 18:48:07.570" endtime="20200301 18:48:07.858"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=address1</arg>
+<arg>Street Show, 20</arg>
+</arguments>
+<msg timestamp="20200301 18:48:07.859" level="INFO">Typing text 'Street Show, 20' into text field 'id=address1'.</msg>
+<status status="PASS" starttime="20200301 18:48:07.858" endtime="20200301 18:48:08.039"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=city</arg>
+<arg>${CITY}</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.040" level="INFO">Typing text 'North Gregg' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.039" endtime="20200301 18:48:08.200"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=postcode</arg>
+<arg>${ZIPCODE}</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.200" level="INFO">Typing text '00916' into text field 'id=postcode'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.200" endtime="20200301 18:48:08.331"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="id_state"]/option[2]</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.331" level="INFO">Clicking element 'xpath=//*[@id="id_state"]/option[2]'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.331" endtime="20200301 18:48:08.398"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=phone_mobile</arg>
+<arg>99999 9999 9999</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.399" level="INFO">Typing text '99999 9999 9999' into text field 'id=phone_mobile'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.398" endtime="20200301 18:48:08.567"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=alias</arg>
+<arg>Cs06</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.567" level="INFO">Typing text 'Cs06' into text field 'id=alias'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.567" endtime="20200301 18:48:08.702"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=other</arg>
+<arg>bla</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.702" level="INFO">Typing text 'bla' into text field 'id=other'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.702" endtime="20200301 18:48:08.811"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:48:05.566" endtime="20200301 18:48:08.811"></status>
+</kw>
+<kw name="E clicar em &quot;Register&quot; para finalizar o cadastro" library="Resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=submitAccount</arg>
+</arguments>
+<msg timestamp="20200301 18:48:08.812" level="INFO">Clicking element 'id=submitAccount'.</msg>
+<status status="PASS" starttime="20200301 18:48:08.812" endtime="20200301 18:48:10.750"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:48:08.811" endtime="20200301 18:48:10.750"></status>
+</kw>
+<kw name="Então a página de gerenciamento da conta deve ser exibida" library="Resource">
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>class=page-heading</arg>
+<arg>MY ACCOUNT</arg>
+</arguments>
+<msg timestamp="20200301 18:48:10.751" level="INFO">Verifying element 'class=page-heading' contains exact text 'MY ACCOUNT'.</msg>
+<status status="PASS" starttime="20200301 18:48:10.751" endtime="20200301 18:48:10.801"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span</arg>
+<arg>ORDER HISTORY AND DETAILS</arg>
+</arguments>
+<msg timestamp="20200301 18:48:10.801" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span' contains exact text 'ORDER HISTORY AND DETAILS'.</msg>
+<status status="PASS" starttime="20200301 18:48:10.801" endtime="20200301 18:48:10.829"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/div/div[1]/ul/li[4]/a/span</arg>
+<arg>MY PERSONAL INFORMATION</arg>
+</arguments>
+<msg timestamp="20200301 18:48:10.830" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/div/div[1]/ul/li[4]/a/span' contains exact text 'MY PERSONAL INFORMATION'.</msg>
+<status status="PASS" starttime="20200301 18:48:10.829" endtime="20200301 18:48:10.855"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:48:10.750" endtime="20200301 18:48:10.855"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:48:01.251" endtime="20200301 18:48:10.855" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20200301 16:23:16.869" endtime="20200301 16:23:48.834"></status>
+<kw name="Fechar navegador" library="Resource" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200301 18:48:10.856" endtime="20200301 18:48:10.917"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:48:10.856" endtime="20200301 18:48:10.917"></status>
+</kw>
+<status status="PASS" starttime="20200301 18:47:33.240" endtime="20200301 18:48:10.918"></status>
 </suite>
-<status status="FAIL" starttime="20200301 16:23:04.562" endtime="20200301 16:23:48.838"></status>
+<status status="PASS" starttime="20200301 18:47:21.793" endtime="20200301 18:48:10.925"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="5">Critical Tests</stat>
-<stat pass="3" fail="5">All Tests</stat>
+<stat pass="9" fail="0">Critical Tests</stat>
+<stat pass="9" fail="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0">prd_not_exit</stat>
-<stat pass="0" fail="1">search_prd</stat>
+<stat pass="1" fail="0">search_prd</stat>
 </tag>
 <suite>
-<stat pass="3" fail="5" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="1" id="s1-s1" name="TestEcommerce">Tests.TestEcommerce</stat>
-<stat pass="2" fail="4" id="s1-s2" name="TestEcommerceBDD">Tests.TestEcommerceBDD</stat>
+<stat pass="9" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" id="s1-s1" name="TestEcommerce">Tests.TestEcommerce</stat>
+<stat pass="7" fail="0" id="s1-s2" name="TestEcommerceBDD">Tests.TestEcommerceBDD</stat>
 </suite>
 </statistics>
 <errors>
