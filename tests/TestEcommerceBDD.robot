@@ -2,12 +2,17 @@
 Resource  ../resource/Resource.robot
 Suite Setup     Abrir navegador
 Library     FakerLibrary
-Suite Teardown  Fechar navegador
+# Suite Teardown  Fechar navegador
 
 *** Variables ***
 
 ${URL}  http://automationpractice.com
 ${BROWSER}  chrome
+${CITY} =  FakerLibrary.city
+${ZIPCODE} =  FakerLibrary.zipcode
+&{PESSOA}    customer_firstname=Fabiano   customer_lastname=Teichmann   password=!3#d!@Gddwd12*dsfDD  address1=Street Show, 20  city=Soledade   zip_code=99330   phone_mobile=99999 9999 9999
+
+@{SUB_CATEGORIA}      Summer Dresses    Printed Summer Dress  Printed Summer Dress  Printed Chiffon Dress
 
 *** Test Cases ***
 Faker_profile
@@ -17,16 +22,7 @@ Faker_profile
         ${first_name} =  FakerLibrary.first_name
         ${last_name} =  FakerLibrary.last_name
         ${phone_number} =  FakerLibrary.phone_number
-        ${profile} =  catenate
-        ...             ${\n}=======================================
-        ...             ${\n}first_name: ${first_name}
-        ...             ${\n}last_name: ${last_name}
-        ...             ${\n}address: ${address}
-        ...             ${\n}country: ${country}
-        ...             ${\n}email: ${EMAIL}
-        ...             ${\n}phone_number: ${phone_number}
-        ...             ${\n}=======================================
-        log to console  ${profile}
+
 
 Cenario 01: Pesquisar produto existente
 
@@ -45,9 +41,8 @@ Cenário 03: Listar Produtos
     Dado que estou na página home do site
     Quando passar o mouse na categoria "WOMEN"
     Então as sub categorias devem ser exibidas
-    Quando clicar na sub categoria "Summer Dresses"
-    Então uma página com os produtos da sub categoria "Summer Dresses" deve ser exibida
-    
+    Quando clicar na sub categoria "${SUB_CATEGORIA}"
+    Então uma página com os produtos da sub categoria "${SUB_CATEGORIA}" deve ser exibida
 
 Cenário 04: Adicionar Produtos no Carrinho
     Dado que estou na página home do site
@@ -72,11 +67,9 @@ Cenário 06: Adicionar Cliente
     log to console  ${EMAIL}
     E inserir um email "${EMAIL}" válido
     E ao clicar no botão "Create na account"
+    Log    Nome: ${PESSOA.customer_firstname}
 
-    ${CITY} =  FakerLibrary.city
-    ${ZIPCODE} =  FakerLibrary.zipcode
-
-    E preencher os campos obrigatórios "${CITY}", "${ZIPCODE}"
+    E preencher os campos obrigatórios "${PESSOA}"
     E clicar em "Register" para finalizar o cadastro
     Então a página de gerenciamento da conta deve ser exibida
 

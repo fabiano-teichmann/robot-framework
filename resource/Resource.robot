@@ -51,10 +51,14 @@ Então as sub categorias devem ser exibidas
 
 Quando clicar na sub categoria "${SUB_CATEGORIA}"
     Wait Until Element is Visible   xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]
-    Click Link  xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"${SUB_CATEGORIA}")]
+    Click Link  xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"${SUB_CATEGORIA[0]}")]
 
 Então uma página com os produtos da sub categoria "${SUB CATEGORIA}" deve ser exibida
-    Element Text Should Be  class=category-name    Summer Dresses
+    Element Text Should Be  class=category-name    ${SUB_CATEGORIA[0]}
+    Page Should Contain Element     xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a[contains(text(), "${SUB_CATEGORIA[1]}")]
+    Page Should Contain Element     xpath=//*[@id="center_column"]/ul/li[2]/div/div[2]/h5/a[contains(text(), "${SUB_CATEGORIA[2]}")]
+    Page Should Contain Element     xpath=//*[@id="center_column"]/ul/li[3]/div/div[2]/h5/a[contains(text(), "${SUB_CATEGORIA[3]}")]
+
 
 Então uma tela de confirmação deve ser exibida
     Wait Until Element is Visible    xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span[contains(text(), "Proceed to checkout")]
@@ -89,16 +93,16 @@ E inserir um email "${EMAIL}" válido
 E ao clicar no botão "Create na account"
     Click Element  id=SubmitCreate
 
-E preencher os campos obrigatórios "${CITY}", "${ZIPCODE}"
+E preencher os campos obrigatórios "${PESSOA}"
     Wait Until Element is Visible   id=submitAccount
-    Input Text  id=customer_firstname   John
-    Input Text  id=customer_lastname    Wick
-    Input Text  id=passwd   !3#d!@Gddwd12*dsfDD
-    Input Text  id=address1    Street Show, 20
-    Input Text  id=city     ${CITY}
-    Input Text  id=postcode     ${ZIPCODE}
+    Input Text  id=customer_firstname   ${PESSOA.customer_firstname}
+    Input Text  id=customer_lastname    ${PESSOA.customer_lastname}
+    Input Text  id=passwd   ${PESSOA.password}
+    Input Text  id=address1    ${PESSOA.address1}
+    Input Text  id=city     ${PESSOA.city}
+    Input Text  id=postcode     ${PESSOA.zip_code}
     Click Element  xpath=//*[@id="id_state"]/option[2]
-    Input Text  id=phone_mobile     99999 9999 9999
+    Input Text  id=phone_mobile     ${PESSOA.phone_mobile}
     Input Text  id=alias    Cs06
     Input Text  id=other    bla
 
