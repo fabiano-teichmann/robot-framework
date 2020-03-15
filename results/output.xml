@@ -1,832 +1,570 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200314 23:05:29.652" rpa="false">
-<suite id="s1" name="TestEcommerceBDD" source="/home/fabiano/PycharmProjects/robotframework/tests/TestEcommerceBDD.robot">
-<kw name="Abrir navegador" library="Resource" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200315 19:32:42.300" rpa="false">
+<suite id="s1" name="Variables" source="/home/fabiano/PycharmProjects/robotframework/variables">
+<suite id="s1-s1" name="ExampleIf" source="/home/fabiano/PycharmProjects/robotframework/variables/ExampleIf.robot">
+<test id="s1-s1-t1" name="Caso de testes if">
+<kw name="Rodando um keyword com condição = true">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
+<arg>'${FRUTAS[0]}' == 'morango'</arg>
+<arg>Log</arg>
+<arg>O primeiro item é morango</arg>
 </arguments>
-<msg timestamp="20200314 23:05:30.005" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200314 23:05:30.005" endtime="20200314 23:05:31.511"></status>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>O primeiro item é morango</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.322" level="INFO">O primeiro item é morango</msg>
+<status status="PASS" starttime="20200315 19:32:42.322" endtime="20200315 19:32:42.322"></status>
 </kw>
-<status status="PASS" starttime="20200314 23:05:30.005" endtime="20200314 23:05:31.511"></status>
+<status status="PASS" starttime="20200315 19:32:42.321" endtime="20200315 19:32:42.322"></status>
 </kw>
-<test id="s1-t1" name="Faker_profile">
-<kw name="Address" library="FakerLibrary">
-<doc>:example '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<status status="PASS" starttime="20200315 19:32:42.321" endtime="20200315 19:32:42.322"></status>
+</kw>
+<kw name="Rodando um keyword com condição = false">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${FRUTAS[1]}' == 'morango'</arg>
+<arg>Log</arg>
+<arg>O segundo item não é morango é ${FRUTAS[1]}</arg>
+</arguments>
+<status status="PASS" starttime="20200315 19:32:42.322" endtime="20200315 19:32:42.323"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.322" endtime="20200315 19:32:42.323"></status>
+</kw>
+<kw name="Armazendando valor keyword">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>if</arg>
+<arg>'${FRUTAS[0]}' == 'morango'</arg>
+<arg>Eu gosto de morango</arg>
+</arguments>
 <assign>
-<var>${address}</var>
+<var>${VAR}</var>
 </assign>
-<msg timestamp="20200314 23:05:31.513" level="INFO">${address} = 841 Contreras Trail
-South Peter, NC 22458</msg>
-<status status="PASS" starttime="20200314 23:05:31.512" endtime="20200314 23:05:31.513"></status>
-</kw>
-<kw name="Country" library="FakerLibrary">
-<assign>
-<var>${country}</var>
-</assign>
-<msg timestamp="20200314 23:05:31.514" level="INFO">${country} = French Polynesia</msg>
-<status status="PASS" starttime="20200314 23:05:31.513" endtime="20200314 23:05:31.514"></status>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<assign>
-<var>${EMAIL}</var>
-</assign>
-<msg timestamp="20200314 23:05:31.514" level="INFO">${EMAIL} = michaelcoffey@hotmail.com</msg>
-<status status="PASS" starttime="20200314 23:05:31.514" endtime="20200314 23:05:31.515"></status>
-</kw>
-<kw name="First Name" library="FakerLibrary">
-<assign>
-<var>${first_name}</var>
-</assign>
-<msg timestamp="20200314 23:05:31.515" level="INFO">${first_name} = Destiny</msg>
-<status status="PASS" starttime="20200314 23:05:31.515" endtime="20200314 23:05:31.515"></status>
-</kw>
-<kw name="Last Name" library="FakerLibrary">
-<assign>
-<var>${last_name}</var>
-</assign>
-<msg timestamp="20200314 23:05:31.516" level="INFO">${last_name} = Sandoval</msg>
-<status status="PASS" starttime="20200314 23:05:31.515" endtime="20200314 23:05:31.516"></status>
-</kw>
-<kw name="Phone Number" library="FakerLibrary">
-<assign>
-<var>${phone_number}</var>
-</assign>
-<msg timestamp="20200314 23:05:31.517" level="INFO">${phone_number} = 611-466-3787x7225</msg>
-<status status="PASS" starttime="20200314 23:05:31.516" endtime="20200314 23:05:31.517"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:31.511" endtime="20200314 23:05:31.517" critical="yes"></status>
-</test>
-<test id="s1-t2" name="Cenario 01: Pesquisar produto existente">
-<kw name="Dado que estou na página home do site">
-<kw name="Acessar página home do site" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:31.519" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200314 23:05:31.519" endtime="20200314 23:05:36.343"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:36.351" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:36.343" endtime="20200314 23:05:36.351"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:31.518" endtime="20200314 23:05:36.351"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:31.518" endtime="20200314 23:05:36.351"></status>
-</kw>
-<kw name="Quando eu pesquisar pelo produto &quot;Blouse&quot;">
-<kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisar" library="Resource">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=search_query_top</arg>
-<arg>${PRODUTO}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:36.352" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200314 23:05:36.352" endtime="20200314 23:05:36.468"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:36.352" endtime="20200314 23:05:36.468"></status>
-</kw>
-<kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>name=${NAME}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:36.470" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200314 23:05:36.469" endtime="20200314 23:05:37.255"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:36.468" endtime="20200314 23:05:37.255"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:36.351" endtime="20200314 23:05:37.255"></status>
-</kw>
-<kw name="Então o produto &quot;Blouse&quot; deve ser listado na página de resultado da busca">
-<kw name="Conferir se o produto &quot;${PRODUTO}&quot; foi listado no site" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>css=#center_column &gt; h1</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:37.257" endtime="20200314 23:05:37.594"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>Search - My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:37.600" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:37.594" endtime="20200314 23:05:37.600"></status>
-</kw>
-<kw name="Page Should Contain Link" library="SeleniumLibrary">
-<doc>Verifies link identified by ``locator`` is found from current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:37.622" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Blouse")]'.</msg>
-<status status="PASS" starttime="20200314 23:05:37.601" endtime="20200314 23:05:37.622"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:37.256" endtime="20200314 23:05:37.622"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:37.256" endtime="20200314 23:05:37.622"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:31.518" endtime="20200314 23:05:37.623" critical="yes"></status>
-</test>
-<test id="s1-t3" name="Cenário 02: Pesquisar produto não existente">
-<kw name="Dado que estou na página home do site">
-<kw name="Acessar página home do site" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:37.624" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200314 23:05:37.624" endtime="20200314 23:05:39.123"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:39.161" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:39.124" endtime="20200314 23:05:39.162"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:37.623" endtime="20200314 23:05:39.162"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:37.623" endtime="20200314 23:05:39.162"></status>
-</kw>
-<kw name="Quando eu pesquisar pelo produto &quot;Produto não existe&quot;">
-<kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisar" library="Resource">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=search_query_top</arg>
-<arg>${PRODUTO}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:39.166" level="INFO">Typing text 'Produto não existe' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200314 23:05:39.166" endtime="20200314 23:05:39.368"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:39.163" endtime="20200314 23:05:39.368"></status>
-</kw>
-<kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>name=${NAME}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:39.369" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200314 23:05:39.368" endtime="20200314 23:05:40.235"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:39.368" endtime="20200314 23:05:40.235"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:39.162" endtime="20200314 23:05:40.236"></status>
-</kw>
-<kw name="Então a página deve exibir a mensagem &quot;No results were found for your search &quot;Produto não existe&quot;&quot;">
-<kw name="Conferir mensagem de erro &quot;${MENSAGEM_ALERTA}&quot;" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:40.236" endtime="20200314 23:05:40.271"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/p[@class='alert alert-warning']</arg>
-<arg>${MENSAGEM_ALERTA}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:40.271" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "Produto não existe"'.</msg>
-<status status="PASS" starttime="20200314 23:05:40.271" endtime="20200314 23:05:40.299"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/h1/span</arg>
-<arg>0 results have been found.</arg>
-</arguments>
-<msg timestamp="20200314 23:05:40.301" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/h1/span' contains exact text '0 results have been found.'.</msg>
-<status status="PASS" starttime="20200314 23:05:40.300" endtime="20200314 23:05:40.327"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:40.236" endtime="20200314 23:05:40.327"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:40.236" endtime="20200314 23:05:40.327"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:37.623" endtime="20200314 23:05:40.327" critical="yes"></status>
-</test>
-<test id="s1-t4" name="Cenário 03: Listar Produtos">
-<kw name="Dado que estou na página home do site">
-<kw name="Acessar página home do site" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:40.329" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200314 23:05:40.328" endtime="20200314 23:05:41.980"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:42.013" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:41.981" endtime="20200314 23:05:42.013"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:40.328" endtime="20200314 23:05:42.013"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:40.328" endtime="20200314 23:05:42.014"></status>
-</kw>
-<kw name="Quando passar o mouse na categoria &quot;WOMEN&quot;" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:42.016" endtime="20200314 23:05:42.057"></status>
-</kw>
-<kw name="Set Focus To Element" library="SeleniumLibrary">
-<doc>Sets the focus to the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:42.057" endtime="20200314 23:05:42.080"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
-<arg>${CATEGORIA}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:42.081" level="INFO">Verifying element 'xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]' contains exact text 'WOMEN'.</msg>
-<status status="PASS" starttime="20200314 23:05:42.081" endtime="20200314 23:05:42.110"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:42.015" endtime="20200314 23:05:42.110"></status>
-</kw>
-<kw name="Então as sub categorias devem ser exibidas" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul//a[contains(text(),"Women")]</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:42.111" endtime="20200314 23:05:42.139"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:42.193" level="INFO">Element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]' is displayed.</msg>
-<status status="PASS" starttime="20200314 23:05:42.140" endtime="20200314 23:05:42.193"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:42.111" endtime="20200314 23:05:42.193"></status>
-</kw>
-<kw name="Quando clicar na sub categoria &quot;${SUB_CATEGORIA}&quot;" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul//a[contains(text(), "Tops")]</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:42.194" endtime="20200314 23:05:42.242"></status>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"${SUB_CATEGORIA[0]}")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:42.242" level="INFO">Clicking link 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a[contains(text(),"Summer Dresses")]'.</msg>
-<status status="PASS" starttime="20200314 23:05:42.242" endtime="20200314 23:05:44.753"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:42.193" endtime="20200314 23:05:44.753"></status>
-</kw>
-<kw name="Então uma página com os produtos da sub categoria &quot;${SUB_CATEGORIA}&quot; deve ser exibida" library="Resource">
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>class=category-name</arg>
-<arg>${SUB_CATEGORIA[0]}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:44.760" level="INFO">Verifying element 'class=category-name' contains exact text 'Summer Dresses'.</msg>
-<status status="PASS" starttime="20200314 23:05:44.759" endtime="20200314 23:05:44.796"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a[contains(text(), "${SUB_CATEGORIA[1]}")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:44.814" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/ul/li[1]/div/div[2]/h5/a[contains(text(), "Printed Summer Dress")]'.</msg>
-<status status="PASS" starttime="20200314 23:05:44.797" endtime="20200314 23:05:44.814"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li[2]/div/div[2]/h5/a[contains(text(), "${SUB_CATEGORIA[2]}")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:44.832" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/ul/li[2]/div/div[2]/h5/a[contains(text(), "Printed Summer Dress")]'.</msg>
-<status status="PASS" starttime="20200314 23:05:44.815" endtime="20200314 23:05:44.832"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li[3]/div/div[2]/h5/a[contains(text(), "${SUB_CATEGORIA[3]}")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:44.857" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]/ul/li[3]/div/div[2]/h5/a[contains(text(), "Printed Chiffon Dress")]'.</msg>
-<status status="PASS" starttime="20200314 23:05:44.832" endtime="20200314 23:05:44.857"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:44.758" endtime="20200314 23:05:44.858"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:40.328" endtime="20200314 23:05:44.858" critical="yes"></status>
-</test>
-<test id="s1-t5" name="Cenário 04: Adicionar Produtos no Carrinho">
-<kw name="Dado que estou na página home do site">
-<kw name="Acessar página home do site" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:44.861" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200314 23:05:44.861" endtime="20200314 23:05:46.429"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:46.457" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:46.430" endtime="20200314 23:05:46.457"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:44.860" endtime="20200314 23:05:46.457"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:44.860" endtime="20200314 23:05:46.457"></status>
-</kw>
-<kw name="Quando eu pesquisar pelo produto &quot;t-shirt&quot;">
-<kw name="Digitar o nome do produto &quot;${PRODUTO}&quot; no campo de pesquisar" library="Resource">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=search_query_top</arg>
-<arg>${PRODUTO}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:46.458" level="INFO">Typing text 't-shirt' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20200314 23:05:46.458" endtime="20200314 23:05:46.560"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:46.457" endtime="20200314 23:05:46.560"></status>
-</kw>
-<kw name="Clicar no botão &quot;submit_search&quot;" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>name=${NAME}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:46.561" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20200314 23:05:46.561" endtime="20200314 23:05:47.514"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:46.560" endtime="20200314 23:05:47.514"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:46.457" endtime="20200314 23:05:47.514"></status>
-</kw>
-<kw name="Então o produto &quot;Faded Short Sleeve T-shirts&quot; deve ser listado na página de resultado da busca">
-<kw name="Conferir se o produto &quot;${PRODUTO}&quot; foi listado no site" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>css=#center_column &gt; h1</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:47.515" endtime="20200314 23:05:47.546"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>Search - My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:47.551" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:47.547" endtime="20200314 23:05:47.552"></status>
-</kw>
-<kw name="Page Should Contain Link" library="SeleniumLibrary">
-<doc>Verifies link identified by ``locator`` is found from current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUTO}")]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:47.570" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Faded Short Sleeve T-shirts")]'.</msg>
-<status status="PASS" starttime="20200314 23:05:47.552" endtime="20200314 23:05:47.570"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:47.515" endtime="20200314 23:05:47.570"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:47.514" endtime="20200314 23:05:47.570"></status>
-</kw>
-<kw name="E ao clicar no botão &quot;Add to cart&quot; do produto">
-<kw name="Clicar no botão carrinho" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:47.571" level="INFO">Clicking element 'xpath=//*[@id="center_column"]/ul/li/div/div[2]/div[2]/a[1]'.</msg>
-<status status="PASS" starttime="20200314 23:05:47.571" endtime="20200314 23:05:47.667"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:47.571" endtime="20200314 23:05:47.667"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:47.571" endtime="20200314 23:05:47.667"></status>
-</kw>
-<kw name="Então uma tela de confirmação deve ser exibida" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span[contains(text(), "Proceed to checkout")]</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:47.668" endtime="20200314 23:05:48.967"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span</arg>
-<arg>Proceed to checkout</arg>
-</arguments>
-<msg timestamp="20200314 23:05:48.967" level="INFO">Verifying element 'xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span' contains exact text 'Proceed to checkout'.</msg>
-<status status="PASS" starttime="20200314 23:05:48.967" endtime="20200314 23:05:49.001"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:47.667" endtime="20200314 23:05:49.002"></status>
-</kw>
-<kw name="Quando clicar no botão &quot;Proceed to checkout&quot;" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a</arg>
-</arguments>
-<msg timestamp="20200314 23:05:49.002" level="INFO">Clicking element 'xpath=//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a'.</msg>
-<status status="PASS" starttime="20200314 23:05:49.002" endtime="20200314 23:05:50.832"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:49.002" endtime="20200314 23:05:50.832"></status>
-</kw>
-<kw name="Então a tela do carrinho de compras deve ser exibido, juntamente com os dados do produto adicionado e os devidos valores" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/p[2]/a[1]/span</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:50.834" endtime="20200314 23:05:50.925"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>class=heading-counter</arg>
-<arg>Your shopping cart contains: 1 Product</arg>
-</arguments>
-<msg timestamp="20200314 23:05:50.925" level="INFO">Verifying element 'class=heading-counter' contains exact text 'Your shopping cart contains: 1 Product'.</msg>
-<status status="PASS" starttime="20200314 23:05:50.925" endtime="20200314 23:05:50.964"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="product_1_1_0_0"]/td[2]/p/a</arg>
-<arg>Faded Short Sleeve T-shirts</arg>
-</arguments>
-<msg timestamp="20200314 23:05:50.964" level="INFO">Verifying element 'xpath=//*[@id="product_1_1_0_0"]/td[2]/p/a' contains exact text 'Faded Short Sleeve T-shirts'.</msg>
-<status status="PASS" starttime="20200314 23:05:50.964" endtime="20200314 23:05:50.994"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>id=total_price</arg>
-<arg>$18.51</arg>
-</arguments>
-<msg timestamp="20200314 23:05:50.994" level="INFO">Verifying element 'id=total_price' contains exact text '$18.51'.</msg>
-<status status="PASS" starttime="20200314 23:05:50.994" endtime="20200314 23:05:51.018"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:50.833" endtime="20200314 23:05:51.018"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:44.859" endtime="20200314 23:05:51.018" critical="yes"></status>
-</test>
-<test id="s1-t6" name="Cenário 05: Remover Produtos">
-<kw name="Dado que estou na página home do site">
-<kw name="Acessar página home do site" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:51.019" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200314 23:05:51.019" endtime="20200314 23:05:52.986"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:53.013" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:52.986" endtime="20200314 23:05:53.013"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:51.019" endtime="20200314 23:05:53.013"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:51.019" endtime="20200314 23:05:53.013"></status>
-</kw>
-<kw name="Quando clicar no ícone carrinho de compras no menu superior direito" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>class=shopping_cart</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:53.014" endtime="20200314 23:05:53.040"></status>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a</arg>
-</arguments>
-<msg timestamp="20200314 23:05:53.041" level="INFO">Clicking link 'xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a'.</msg>
-<status status="PASS" starttime="20200314 23:05:53.041" endtime="20200314 23:05:53.918"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:53.013" endtime="20200314 23:05:53.918"></status>
-</kw>
-<kw name="E ao clicar no botão de remoção de produtos (delete) no produto do carrinho" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=cart_title</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:53.920" endtime="20200314 23:05:53.949"></status>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="1_1_0_0"]</arg>
-</arguments>
-<msg timestamp="20200314 23:05:53.950" level="INFO">Clicking link 'xpath=//*[@id="1_1_0_0"]'.</msg>
-<status status="PASS" starttime="20200314 23:05:53.950" endtime="20200314 23:05:54.045"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:53.919" endtime="20200314 23:05:54.045"></status>
-</kw>
-<kw name="Então o sistema deve exibir a mensagem &quot;Your shopping cart is empty.&quot;" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/p</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:05:54.046" endtime="20200314 23:05:55.394"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/p</arg>
-<arg>${MSG}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:55.394" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p' contains exact text 'Your shopping cart is empty.'.</msg>
-<status status="PASS" starttime="20200314 23:05:55.394" endtime="20200314 23:05:55.418"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:54.045" endtime="20200314 23:05:55.418"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:51.018" endtime="20200314 23:05:55.418" critical="yes"></status>
-</test>
-<test id="s1-t7" name="Cenário 06: Adicionar Cliente">
-<kw name="Dado que estou na página home do site">
-<kw name="Acessar página home do site" library="Resource">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200314 23:05:55.419" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20200314 23:05:55.419" endtime="20200314 23:05:58.873"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20200314 23:05:58.903" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20200314 23:05:58.873" endtime="20200314 23:05:58.903"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:55.419" endtime="20200314 23:05:58.904"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:55.419" endtime="20200314 23:05:58.904"></status>
-</kw>
-<kw name="Quando clicar no botão superior direito “Sign in”" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a</arg>
-</arguments>
-<msg timestamp="20200314 23:05:58.905" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]/div/div/nav/div[1]/a'.</msg>
-<status status="PASS" starttime="20200314 23:05:58.905" endtime="20200314 23:06:00.675"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:58.904" endtime="20200314 23:06:00.676"></status>
-</kw>
-<kw name="Email" library="FakerLibrary">
-<assign>
-<var>${EMAIL}</var>
-</assign>
-<msg timestamp="20200314 23:06:00.677" level="INFO">${EMAIL} = wrightscott@thomas-kelly.com</msg>
-<status status="PASS" starttime="20200314 23:06:00.676" endtime="20200314 23:06:00.677"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${EMAIL}</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:06:00.677" endtime="20200314 23:06:00.678"></status>
-</kw>
-<kw name="E inserir um email &quot;${EMAIL}&quot; válido" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=email_create</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:06:00.679" endtime="20200314 23:06:00.712"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=email_create</arg>
-<arg>${EMAIL}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:00.713" level="INFO">Typing text 'wrightscott@thomas-kelly.com' into text field 'id=email_create'.</msg>
-<status status="PASS" starttime="20200314 23:06:00.712" endtime="20200314 23:06:00.871"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:06:00.678" endtime="20200314 23:06:00.871"></status>
-</kw>
-<kw name="E ao clicar no botão &quot;Create na account&quot;" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=SubmitCreate</arg>
-</arguments>
-<msg timestamp="20200314 23:06:00.872" level="INFO">Clicking element 'id=SubmitCreate'.</msg>
-<status status="PASS" starttime="20200314 23:06:00.872" endtime="20200314 23:06:00.956"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:06:00.871" endtime="20200314 23:06:00.957"></status>
+<msg timestamp="20200315 19:32:42.323" level="INFO">${VAR} = ['if', "'morango' == 'morango'", 'Eu gosto de morango']</msg>
+<status status="PASS" starttime="20200315 19:32:42.323" endtime="20200315 19:32:42.323"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
-<arg>Nome: ${PESSOA.customer_firstname}</arg>
+<arg>Minha variável é ${VAR}!!!</arg>
 </arguments>
-<msg timestamp="20200314 23:06:00.957" level="INFO">Nome: Fabiano</msg>
-<status status="PASS" starttime="20200314 23:06:00.957" endtime="20200314 23:06:00.957"></status>
+<msg timestamp="20200315 19:32:42.324" level="INFO">Minha variável é ['if', "'morango' == 'morango'", 'Eu gosto de morango']!!!</msg>
+<status status="PASS" starttime="20200315 19:32:42.323" endtime="20200315 19:32:42.324"></status>
 </kw>
-<kw name="E preencher os campos obrigatórios &quot;${PESSOA}&quot;" library="Resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=submitAccount</arg>
-</arguments>
-<status status="PASS" starttime="20200314 23:06:00.958" endtime="20200314 23:06:02.421"></status>
+<status status="PASS" starttime="20200315 19:32:42.323" endtime="20200315 19:32:42.324"></status>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=customer_firstname</arg>
-<arg>${PESSOA.customer_firstname}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:02.422" level="INFO">Typing text 'Fabiano' into text field 'id=customer_firstname'.</msg>
-<status status="PASS" starttime="20200314 23:06:02.422" endtime="20200314 23:06:02.596"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=customer_lastname</arg>
-<arg>${PESSOA.customer_lastname}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:02.597" level="INFO">Typing text 'Teichmann' into text field 'id=customer_lastname'.</msg>
-<status status="PASS" starttime="20200314 23:06:02.596" endtime="20200314 23:06:02.735"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=passwd</arg>
-<arg>${PESSOA.password}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:02.735" level="INFO">Typing text '!3#d!@Gddwd12*dsfDD' into text field 'id=passwd'.</msg>
-<status status="PASS" starttime="20200314 23:06:02.735" endtime="20200314 23:06:03.000"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=address1</arg>
-<arg>${PESSOA.address1}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.001" level="INFO">Typing text 'Street Show, 20' into text field 'id=address1'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.000" endtime="20200314 23:06:03.344"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=city</arg>
-<arg>${PESSOA.city}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.344" level="INFO">Typing text 'Soledade' into text field 'id=city'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.344" endtime="20200314 23:06:03.468"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=postcode</arg>
-<arg>${PESSOA.zip_code}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.468" level="INFO">Typing text '99330' into text field 'id=postcode'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.468" endtime="20200314 23:06:03.579"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="id_state"]/option[2]</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.579" level="INFO">Clicking element 'xpath=//*[@id="id_state"]/option[2]'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.579" endtime="20200314 23:06:03.628"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=phone_mobile</arg>
-<arg>${PESSOA.phone_mobile}</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.628" level="INFO">Typing text '99999 9999 9999' into text field 'id=phone_mobile'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.628" endtime="20200314 23:06:03.794"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=alias</arg>
-<arg>Cs06</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.795" level="INFO">Typing text 'Cs06' into text field 'id=alias'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.794" endtime="20200314 23:06:03.898"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=other</arg>
-<arg>bla</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.898" level="INFO">Typing text 'bla' into text field 'id=other'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.898" endtime="20200314 23:06:03.986"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:06:00.958" endtime="20200314 23:06:03.986"></status>
-</kw>
-<kw name="E clicar em &quot;Register&quot; para finalizar o cadastro" library="Resource">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=submitAccount</arg>
-</arguments>
-<msg timestamp="20200314 23:06:03.986" level="INFO">Clicking element 'id=submitAccount'.</msg>
-<status status="PASS" starttime="20200314 23:06:03.986" endtime="20200314 23:06:05.490"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:06:03.986" endtime="20200314 23:06:05.490"></status>
-</kw>
-<kw name="Então a página de gerenciamento da conta deve ser exibida" library="Resource">
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>class=page-heading</arg>
-<arg>MY ACCOUNT</arg>
-</arguments>
-<msg timestamp="20200314 23:06:05.491" level="INFO">Verifying element 'class=page-heading' contains exact text 'MY ACCOUNT'.</msg>
-<status status="PASS" starttime="20200314 23:06:05.491" endtime="20200314 23:06:05.528"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span</arg>
-<arg>ORDER HISTORY AND DETAILS</arg>
-</arguments>
-<msg timestamp="20200314 23:06:05.529" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span' contains exact text 'ORDER HISTORY AND DETAILS'.</msg>
-<status status="PASS" starttime="20200314 23:06:05.528" endtime="20200314 23:06:05.554"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]/div/div[1]/ul/li[4]/a/span</arg>
-<arg>MY PERSONAL INFORMATION</arg>
-</arguments>
-<msg timestamp="20200314 23:06:05.555" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/div/div[1]/ul/li[4]/a/span' contains exact text 'MY PERSONAL INFORMATION'.</msg>
-<status status="PASS" starttime="20200314 23:06:05.554" endtime="20200314 23:06:05.580"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:06:05.491" endtime="20200314 23:06:05.580"></status>
-</kw>
-<status status="PASS" starttime="20200314 23:05:55.418" endtime="20200314 23:06:05.581" critical="yes"></status>
+<status status="PASS" starttime="20200315 19:32:42.321" endtime="20200315 19:32:42.324" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200314 23:05:29.653" endtime="20200314 23:06:05.582"></status>
+<test id="s1-s1-t2" name="Caso de testes loop">
+<kw name="Usando FOR com RANGE">
+<kw name="${COUNT} IN RANGE [ 1 | 6 ]" type="for">
+<kw name="${COUNT} = 1" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu contador é ${COUNT}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.326" level="INFO">Meu contador é 1</msg>
+<status status="PASS" starttime="20200315 19:32:42.325" endtime="20200315 19:32:42.326"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.325" endtime="20200315 19:32:42.326"></status>
+</kw>
+<kw name="${COUNT} = 2" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu contador é ${COUNT}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.326" level="INFO">Meu contador é 2</msg>
+<status status="PASS" starttime="20200315 19:32:42.326" endtime="20200315 19:32:42.326"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.326" endtime="20200315 19:32:42.326"></status>
+</kw>
+<kw name="${COUNT} = 3" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu contador é ${COUNT}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.326" level="INFO">Meu contador é 3</msg>
+<status status="PASS" starttime="20200315 19:32:42.326" endtime="20200315 19:32:42.326"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.326" endtime="20200315 19:32:42.326"></status>
+</kw>
+<kw name="${COUNT} = 4" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu contador é ${COUNT}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.327" level="INFO">Meu contador é 4</msg>
+<status status="PASS" starttime="20200315 19:32:42.326" endtime="20200315 19:32:42.327"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.326" endtime="20200315 19:32:42.327"></status>
+</kw>
+<kw name="${COUNT} = 5" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Meu contador é ${COUNT}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.327" level="INFO">Meu contador é 5</msg>
+<status status="PASS" starttime="20200315 19:32:42.327" endtime="20200315 19:32:42.327"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.327" endtime="20200315 19:32:42.327"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.325" endtime="20200315 19:32:42.327"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.325" endtime="20200315 19:32:42.327"></status>
+</kw>
+<kw name="Usando FOR com LISTA">
+<kw name="${ITEM} IN [ @{FRUTAS} ]" type="for">
+<kw name="${ITEM} = morango" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Minha fruta ${ITEM}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.328" level="INFO">Minha fruta morango</msg>
+<status status="PASS" starttime="20200315 19:32:42.328" endtime="20200315 19:32:42.328"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.328" endtime="20200315 19:32:42.328"></status>
+</kw>
+<kw name="${ITEM} = banana" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Minha fruta ${ITEM}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.328" level="INFO">Minha fruta banana</msg>
+<status status="PASS" starttime="20200315 19:32:42.328" endtime="20200315 19:32:42.328"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.328" endtime="20200315 19:32:42.328"></status>
+</kw>
+<kw name="${ITEM} = maça" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Minha fruta ${ITEM}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.329" level="INFO">Minha fruta maça</msg>
+<status status="PASS" starttime="20200315 19:32:42.328" endtime="20200315 19:32:42.329"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.328" endtime="20200315 19:32:42.329"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.327" endtime="20200315 19:32:42.329"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.327" endtime="20200315 19:32:42.329"></status>
+</kw>
+<kw name="Saindo de um FOR">
+<kw name="${ITEM} IN [ @{FRUTAS} ]" type="for">
+<kw name="${ITEM} = morango" type="foritem">
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${ITEM}' == 'banana'</arg>
+</arguments>
+<status status="PASS" starttime="20200315 19:32:42.329" endtime="20200315 19:32:42.329"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Minha fruta ${ITEM}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.330" level="INFO">Minha fruta morango</msg>
+<status status="PASS" starttime="20200315 19:32:42.329" endtime="20200315 19:32:42.330"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.329" endtime="20200315 19:32:42.330"></status>
+</kw>
+<kw name="${ITEM} = banana" type="foritem">
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>'${ITEM}' == 'banana'</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.330" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200315 19:32:42.330" endtime="20200315 19:32:42.330"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.330" endtime="20200315 19:32:42.330"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.329" endtime="20200315 19:32:42.330"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.329" endtime="20200315 19:32:42.330"></status>
+</kw>
+<kw name="Usando REPEAT">
+<kw name="Repeat Keyword" library="BuiltIn">
+<doc>Executes the specified keyword multiple times.</doc>
+<arguments>
+<arg>4</arg>
+<arg>Log</arg>
+<arg>Repete 4 vezes</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.331" level="INFO">Repeating keyword, round 1/4.</msg>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Repete 4 vezes</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.331" level="INFO">Repete 4 vezes</msg>
+<status status="PASS" starttime="20200315 19:32:42.331" endtime="20200315 19:32:42.331"></status>
+</kw>
+<msg timestamp="20200315 19:32:42.331" level="INFO">Repeating keyword, round 2/4.</msg>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Repete 4 vezes</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.331" level="INFO">Repete 4 vezes</msg>
+<status status="PASS" starttime="20200315 19:32:42.331" endtime="20200315 19:32:42.331"></status>
+</kw>
+<msg timestamp="20200315 19:32:42.331" level="INFO">Repeating keyword, round 3/4.</msg>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Repete 4 vezes</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.332" level="INFO">Repete 4 vezes</msg>
+<status status="PASS" starttime="20200315 19:32:42.331" endtime="20200315 19:32:42.332"></status>
+</kw>
+<msg timestamp="20200315 19:32:42.332" level="INFO">Repeating keyword, round 4/4.</msg>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Repete 4 vezes</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.332" level="INFO">Repete 4 vezes</msg>
+<status status="PASS" starttime="20200315 19:32:42.332" endtime="20200315 19:32:42.332"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.331" endtime="20200315 19:32:42.332"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.330" endtime="20200315 19:32:42.332"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.324" endtime="20200315 19:32:42.332" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200315 19:32:42.319" endtime="20200315 19:32:42.333"></status>
+</suite>
+<suite id="s1-s2" name="ExampleVariableScope" source="/home/fabiano/PycharmProjects/robotframework/variables/ExampleVariableScope.robot">
+<test id="s1-s2-t1" name="Cenario exemplo 01">
+<kw name="Uma Keyword qualquer 01">
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+<arg>teste feita em execução</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.342" level="INFO">${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO} = teste feita em execução</msg>
+<status status="PASS" starttime="20200315 19:32:42.341" endtime="20200315 19:32:42.342"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${SUITE_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+<arg>Variável da suite</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.342" level="INFO">${SUITE_CRIADA_EM_TEMPO_EXECUCAO} = Variável da suite</msg>
+<status status="PASS" starttime="20200315 19:32:42.342" endtime="20200315 19:32:42.342"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${TESTE_01}</arg>
+<arg>Variável do teste 01</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.343" level="INFO">${TESTE_01} = Variável do teste 01</msg>
+<status status="PASS" starttime="20200315 19:32:42.342" endtime="20200315 19:32:42.343"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${TESTE_01}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.343" level="INFO">Variável do teste 01</msg>
+<status status="PASS" starttime="20200315 19:32:42.343" endtime="20200315 19:32:42.343"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Variavel local da keyword 01</arg>
+</arguments>
+<assign>
+<var>${LOCAL}</var>
+</assign>
+<msg timestamp="20200315 19:32:42.344" level="INFO">${LOCAL} = Variavel local da keyword 01</msg>
+<status status="PASS" starttime="20200315 19:32:42.343" endtime="20200315 19:32:42.344"></status>
+</kw>
+<kw name="Uma Subkeyword com argumento">
+<arguments>
+<arg>${PESSOA.nome}</arg>
+<arg>${PESSOA.email}</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Nome: ${PESSOA.nome}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.344" level="INFO">Nome: Fabiano Teichmann</msg>
+<status status="PASS" starttime="20200315 19:32:42.344" endtime="20200315 19:32:42.344"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Email: ${PESSOA.email}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.344" level="INFO">Email: fabiano.geek@gmail.com</msg>
+<status status="PASS" starttime="20200315 19:32:42.344" endtime="20200315 19:32:42.344"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.344" endtime="20200315 19:32:42.345"></status>
+</kw>
+<kw name="Uma Subkeyword com retorno">
+<arguments>
+<arg>${PESSOA.nome}</arg>
+<arg>${PESSOA.idade}</arg>
+</arguments>
+<assign>
+<var>${ALERTA}</var>
+</assign>
+<kw name="Set Variable If" library="BuiltIn">
+<doc>Sets variable based on the given condition.</doc>
+<arguments>
+<arg>${IDADE}&lt;18</arg>
+<arg>Usuário ${NOME} Não autorizado</arg>
+</arguments>
+<assign>
+<var>${MSG}</var>
+</assign>
+<msg timestamp="20200315 19:32:42.345" level="INFO">${MSG} = None</msg>
+<status status="PASS" starttime="20200315 19:32:42.345" endtime="20200315 19:32:42.345"></status>
+</kw>
+<msg timestamp="20200315 19:32:42.346" level="INFO">${ALERTA} = None</msg>
+<status status="PASS" starttime="20200315 19:32:42.345" endtime="20200315 19:32:42.346"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ALERTA}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.346" level="INFO">None</msg>
+<status status="PASS" starttime="20200315 19:32:42.346" endtime="20200315 19:32:42.346"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.341" endtime="20200315 19:32:42.346"></status>
+</kw>
+<kw name="Uma Keyword qualquer 02">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Variavel local da keyword 02</arg>
+</arguments>
+<assign>
+<var>${LOCAL}</var>
+</assign>
+<msg timestamp="20200315 19:32:42.346" level="INFO">${LOCAL} = Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.346" endtime="20200315 19:32:42.346"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.347" level="INFO">Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.346" endtime="20200315 19:32:42.347"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.347" level="INFO">teste feita em execução</msg>
+<status status="PASS" starttime="20200315 19:32:42.347" endtime="20200315 19:32:42.347"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_INSTANCIADA} ${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO} ${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.347" level="INFO">MINHA VARIAVEL GLOBAL teste feita em execução Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.347" endtime="20200315 19:32:42.347"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.346" endtime="20200315 19:32:42.347"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.341" endtime="20200315 19:32:42.348" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="Cenario exemplo 02">
+<kw name="Uma Keyword qualquer 02">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Variavel local da keyword 02</arg>
+</arguments>
+<assign>
+<var>${LOCAL}</var>
+</assign>
+<msg timestamp="20200315 19:32:42.348" level="INFO">${LOCAL} = Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.348" endtime="20200315 19:32:42.348"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.349" level="INFO">Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.348" endtime="20200315 19:32:42.349"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.349" level="INFO">teste feita em execução</msg>
+<status status="PASS" starttime="20200315 19:32:42.349" endtime="20200315 19:32:42.349"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_INSTANCIADA} ${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO} ${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.349" level="INFO">MINHA VARIAVEL GLOBAL teste feita em execução Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.349" endtime="20200315 19:32:42.349"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.348" endtime="20200315 19:32:42.349"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.348" endtime="20200315 19:32:42.350" critical="yes"></status>
+</test>
+<test id="s1-s2-t3" name="Cenario exemplo 03">
+<kw name="Uma Keyword qualquer 02">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Variavel local da keyword 02</arg>
+</arguments>
+<assign>
+<var>${LOCAL}</var>
+</assign>
+<msg timestamp="20200315 19:32:42.350" level="INFO">${LOCAL} = Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.350" endtime="20200315 19:32:42.350"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.351" level="INFO">Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.351" endtime="20200315 19:32:42.351"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.351" level="INFO">teste feita em execução</msg>
+<status status="PASS" starttime="20200315 19:32:42.351" endtime="20200315 19:32:42.351"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_INSTANCIADA} ${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO} ${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.351" level="INFO">MINHA VARIAVEL GLOBAL teste feita em execução Variavel local da keyword 02</msg>
+<status status="PASS" starttime="20200315 19:32:42.351" endtime="20200315 19:32:42.352"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.350" endtime="20200315 19:32:42.352"></status>
+</kw>
+<kw name="Uma Keyword qualquer 03">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>Variavel local da keyword 03</arg>
+</arguments>
+<assign>
+<var>${LOCAL}</var>
+</assign>
+<msg timestamp="20200315 19:32:42.353" level="INFO">${LOCAL} = Variavel local da keyword 03</msg>
+<status status="PASS" starttime="20200315 19:32:42.352" endtime="20200315 19:32:42.353"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.353" level="INFO">Variavel local da keyword 03</msg>
+<status status="PASS" starttime="20200315 19:32:42.353" endtime="20200315 19:32:42.353"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${LOCAL}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.354" level="INFO">Variavel local da keyword 03</msg>
+<status status="PASS" starttime="20200315 19:32:42.353" endtime="20200315 19:32:42.354"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_INSTANCIADA}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.354" level="INFO">MINHA VARIAVEL GLOBAL</msg>
+<status status="PASS" starttime="20200315 19:32:42.354" endtime="20200315 19:32:42.354"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${GLOBAL_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.355" level="INFO">teste feita em execução</msg>
+<status status="PASS" starttime="20200315 19:32:42.355" endtime="20200315 19:32:42.355"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${SUITE_CRIADA_EM_TEMPO_EXECUCAO}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.355" level="INFO">Variável da suite</msg>
+<status status="PASS" starttime="20200315 19:32:42.355" endtime="20200315 19:32:42.355"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${FRUTAS[0]}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.356" level="INFO">morango</msg>
+<status status="PASS" starttime="20200315 19:32:42.355" endtime="20200315 19:32:42.356"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Nome: ${PESSOA.nome} e email: ${PESSOA.email}</arg>
+</arguments>
+<msg timestamp="20200315 19:32:42.356" level="INFO">Nome: Fabiano Teichmann e email: fabiano.geek@gmail.com</msg>
+<status status="PASS" starttime="20200315 19:32:42.356" endtime="20200315 19:32:42.356"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.352" endtime="20200315 19:32:42.356"></status>
+</kw>
+<status status="PASS" starttime="20200315 19:32:42.350" endtime="20200315 19:32:42.357" critical="yes"></status>
+</test>
+<doc>Exemplo de escopo de variáveis: GLOBAIS, SUITE, TESTE E LOCAL</doc>
+<status status="PASS" starttime="20200315 19:32:42.333" endtime="20200315 19:32:42.357"></status>
+</suite>
+<status status="PASS" starttime="20200315 19:32:42.301" endtime="20200315 19:32:42.358"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="7" fail="0">Critical Tests</stat>
-<stat pass="7" fail="0">All Tests</stat>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="7" fail="0" id="s1" name="TestEcommerceBDD">TestEcommerceBDD</stat>
+<stat pass="5" fail="0" id="s1" name="Variables">Variables</stat>
+<stat pass="2" fail="0" id="s1-s1" name="ExampleIf">Variables.ExampleIf</stat>
+<stat pass="3" fail="0" id="s1-s2" name="ExampleVariableScope">Variables.ExampleVariableScope</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20200315 19:32:42.295" level="ERROR">Error in file '/home/fabiano/PycharmProjects/robotframework/variables/ExampleIf.robot': Setting 'Documentation' used multiple times.</msg>
 </errors>
 </robot>
