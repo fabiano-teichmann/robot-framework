@@ -84,3 +84,7 @@ Conferir se cadastrou o livro
     Dictionary Should Contain Item      ${RESPOSTA.json()}  PageCount  ${NEW_BOOK.PageCount}
     Dictionary Should Contain Item      ${RESPOSTA.json()}  Excerpt  ${NEW_BOOK.Excerpt}
     Should Not Be Empty      ${RESPOSTA.json()["PublishDate"]}
+
+
+Confere se a resposta e vazia
+     Should Be Empty      ${RESPOSTA.content}

@@ -30,6 +30,7 @@ Cadastrar um novo livro (POST)
 Excluir um Livro
     Deletar o livro "1"
     Conferir o status code  200
+    Confere se a resposta e vazia
 
 
 Atualizar Livro
